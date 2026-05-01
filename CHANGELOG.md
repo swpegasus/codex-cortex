@@ -1,5 +1,11 @@
 # Changelog
 
+## alpha - 2026-05-01
+
+- First public alpha release.
+- Includes Codex Cortex blank template, publish base, validation and install tools, schemas, prompt pack, integration docs, GitHub community files, and MIT License.
+- Known gaps: no MCP server runtime, no n8n workflow examples, and no full JSON Schema validation beyond JSON parsing.
+
 ## 0.2.0 - 2026-05-01
 
 - Renamed the project to Codex Cortex.

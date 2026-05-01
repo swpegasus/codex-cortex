@@ -19,6 +19,7 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Select MIT License - reason: Codex Cortex is a reusable template/tooling project intended for broad adoption with low friction; evidence: `LICENSE.txt`; date: 2026-05-01
 - Add publish/base - reason: public GitHub repo needs a blank, project-free base separate from root `.cortex` maintenance state; evidence: `publish/base/manifest.json`; date: 2026-05-01
 - Add schemas, prompts, and GitHub templates - reason: agents and workflow systems need stable contracts, reusable prompt patterns, and contribution paths; evidence: `schemas/`, `prompts/`, `.github/`; date: 2026-05-01
+- Name first release `alpha` - reason: user requested alpha labeling for the current public base; evidence: GitHub tag/release `alpha`; date: 2026-05-01
 
 ## Evidence
 
@@ -31,13 +32,12 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Root Cortex validation found zero missing files, zero placeholders, zero invalid JSON files, and zero recovery-order missing files; date: 2026-05-01
 - Template and publish-base template validation found zero missing files, expected placeholders, zero invalid JSON files, and zero recovery-order missing files; date: 2026-05-01
 - Global `codex-cortex` skill was synced with new scripts/references/prompts and validated; date: 2026-05-01
+- GitHub release/tag `alpha` created from the current main branch; date: 2026-05-01
 
 ## Open Questions
 
-- Should a first release/tag be created now or after the MCP/server direction is more complete?
 - Should the validator remain pure PowerShell JSON parsing or add full JSON Schema validation through an external dependency?
 
 ## Next Step
 
-- Optionally create a first release/tag.
 - Continue with MCP server implementation planning when ready.

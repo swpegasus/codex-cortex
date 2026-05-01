@@ -23,3 +23,11 @@
 - Not done: MCP server runtime, n8n workflow examples, release/tag.
 - Status: repository is cleaner for public users because root `.cortex/` state is separate from generated `publish/base/`.
 - Follow-up: decide whether to tag a release or continue into MCP server implementation.
+
+## 2026-05-01 - Alpha release
+
+- Changed: added `alpha` changelog entry and prepared release state.
+- Verified: Cortex validation still passes before release.
+- Not done: MCP server runtime and n8n examples.
+- Status: GitHub release/tag is named `alpha`.
+- Follow-up: continue with MCP server planning or n8n workflow examples.

@@ -8,8 +8,6 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 ## Blocked
 
-- [ ] Create GitHub release/tag - blocked by: release readiness decision; added: 2026-05-01
-
 ## Later
 
 - [ ] Build MCP server - revisit when: read-only validator and metadata contract are stable; added: 2026-05-01
@@ -36,6 +34,7 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 - [x] Add packaging script - completed: 2026-05-01; notes: added `tools/Build-PublishBase.ps1`
 - [x] Add integration documentation for MCP and n8n - completed: 2026-05-01; notes: added `docs/INTEGRATIONS.txt` and `docs/RESEARCH_NOTES.txt`
 - [x] Sync installed system skill - completed: 2026-05-01; notes: copied updated scripts/references/prompts into `C:\Users\me\.codex\skills\codex-cortex` and validated the skill
+- [x] Create GitHub release/tag - completed: 2026-05-01; notes: release/tag name is `alpha`
 
 ## Rule
 
