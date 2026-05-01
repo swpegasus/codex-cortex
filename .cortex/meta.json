@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "0.2",
+  "project": {
+    "name": "Codex Cortex",
+    "root": "D:\\Codex Projects\\_codex\\codex-cortex",
+    "phase": "pre-publish setup",
+    "lastUpdated": "2026-05-01"
+  },
+  "cortex": {
+    "name": "Codex Cortex",
+    "stateRoot": ".cortex",
+    "humanReadableSource": true
+  },
+  "files": {
+    "agents": "AGENTS.md",
+    "start": "START_HERE.md",
+    "readme": ".cortex/README.md",
+    "state": ".cortex/STATE.md",
+    "recovery": ".cortex/RECOVERY.md",
+    "worklog": ".cortex/WORKLOG.md",
+    "learnings": ".cortex/LEARNINGS.md",
+    "sessions": ".cortex/SESSIONS.md",
+    "tasks": ".cortex/TASKS.md",
+    "guide": ".cortex/GUIDE.md",
+    "rules": ".cortex/RULES.md"
+  },
+  "recoveryOrder": [
+    "START_HERE.md",
+    "AGENTS.md",
+    ".cortex/README.md",
+    ".cortex/STATE.md",
+    ".cortex/WORKLOG.md",
+    ".cortex/LEARNINGS.md",
+    ".cortex/SESSIONS.md",
+    ".cortex/TASKS.md",
+    ".cortex/RECOVERY.md",
+    ".cortex/GUIDE.md",
+    ".cortex/RULES.md"
+  ],
+  "safetyGates": {
+    "compile": "requires explicit user request or go",
+    "upload": "requires explicit user request or go",
+    "deploy": "requires explicit user request or go",
+    "publish": "requires explicit user request or go",
+    "riskyAutomation": "requires explicit user approval"
+  },
+  "updatePolicy": {
+    "scope": "current project only",
+    "privateChainOfThoughtAllowed": false,
+    "preferredWriteMode": "append or narrow patch",
+    "autonomousLearningsUpdates": true,
+    "appliesTo": ["agents", "prompts", "threads"],
+    "markUnverifiedFacts": true,
+    "preserveUserRules": true
+  }
+}
