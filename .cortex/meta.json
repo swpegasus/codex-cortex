@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/swpegasus/codex-cortex/main/schemas/cortex.schema.json",
   "schemaVersion": "0.2",
   "project": {
     "name": "Codex Cortex",

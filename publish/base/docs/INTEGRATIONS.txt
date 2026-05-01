@@ -1,0 +1,96 @@
+Codex Cortex Integrations
+=========================
+
+Purpose
+-------
+
+This document describes integration directions for agents, prompts, MCP servers,
+n8n workflows, and GitHub packaging.
+
+MCP Direction
+-------------
+
+Codex Cortex should expose a small MCP surface first:
+
+- discover_project
+- validate_project
+- read_project_brief
+- append_learning
+- append_worklog
+- update_task
+- prepare_closeout
+
+Tools should return structured JSON where possible. MCP tools can also return
+resource links or embedded resources when useful, so a future Cortex server
+should expose Cortex files as resources rather than putting everything into one
+large text result.
+
+The MCP server should respect client roots and project boundaries. It should
+work from relative paths inside the project root and should not read unrelated
+projects unless the user explicitly allows it.
+
+Sampling and elicitation should stay human-gated. If a server asks for more
+information or asks a model to perform nested reasoning, the client/user should
+be able to approve, reject, or edit that request.
+
+n8n Direction
+-------------
+
+n8n can work with Cortex in two ways:
+
+1. As an MCP client that calls a Cortex MCP server.
+2. As an MCP server that exposes Cortex-related workflows.
+
+Recommended workflows:
+
+- validate a project
+- summarize current state
+- append a learning
+- append a session
+- move a task
+- prepare a closeout proposal
+
+n8n instance-level MCP access must be explicitly enabled, and workflows must be
+individually enabled for MCP access. Workflow descriptions should clearly state
+expected inputs so agents can call them correctly.
+
+If using n8n's MCP Server Trigger node, remember that it supports SSE and
+streamable HTTP, not stdio. Queue-mode deployments need stable routing for MCP
+connections.
+
+GitHub Direction
+----------------
+
+Public GitHub packaging should include:
+
+- README
+- license
+- contributing guide
+- security policy
+- issue templates
+- pull request template
+- clear docs
+- publishable base package
+
+The working repository can keep project-specific `.cortex/` state. The
+`publish/base/` folder should remain project-free and suitable for copying,
+downloading, or packaging as a clean template.
+
+Prompt Direction
+----------------
+
+Prompt files under `prompts/` are not private instructions. They are reusable
+operating prompts for other agents and tools.
+
+Prompts should:
+
+- preserve approval gates
+- avoid private chain-of-thought
+- update LEARNINGS when durable lessons are found
+- verify before publishing
+- keep project-local scope
+
+Research Trace
+--------------
+
+For source links and design implications, read `docs/RESEARCH_NOTES.txt`.

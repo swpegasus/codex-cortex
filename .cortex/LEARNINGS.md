@@ -24,6 +24,10 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 - Project-local Cortex use requires root `AGENTS.md`, `START_HERE.md`, and `.cortex/` - context: future runs need deterministic recovery order; evidence: installed into the Codex Cortex repo; found: 2026-05-01
 - GitHub publishing works after `gh auth login` - context: `gh repo create swpegasus/codex-cortex --private --source . --remote origin --push` created the repo and pushed `main`; evidence: `https://github.com/swpegasus/codex-cortex`; found: 2026-05-01
 - Public GitHub visibility should follow license selection - context: repository was kept private until MIT License replaced the temporary no-license notice; evidence: `LICENSE.txt`; found: 2026-05-01
+- Relative `$schema` paths are fragile in reusable templates - context: template metadata can be copied into arbitrary projects where repo-relative schema paths no longer exist; better path: use stable schema URLs or omit `$schema`; evidence: `template/.cortex/meta.json`; found: 2026-05-01
+- Keep root `.cortex/` separate from publishable base - context: root `.cortex/` contains this repository's maintenance state and should not be distributed as a blank template; better path: generate `publish/base/` from source template/docs/tools; found: 2026-05-01
+- n8n MCP exposure must be explicit - context: workflows are not automatically visible to MCP clients and descriptions help agents identify inputs; better path: document per-workflow enablement and descriptions in integration guidance; source: n8n docs; found: 2026-05-01
+- Future MCP server should expose resources as well as tools - context: MCP tool results can link or embed resources, which is better than returning all Cortex files as one large text block; source: MCP docs; found: 2026-05-01
 
 ## Failed Approaches
 

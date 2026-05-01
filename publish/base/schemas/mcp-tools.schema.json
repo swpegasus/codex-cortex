@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/swpegasus/codex-cortex/schemas/mcp-tools.schema.json",
+  "title": "Codex Cortex MCP Tool Contract",
+  "type": "object",
+  "required": ["schemaVersion", "serverName", "tools", "defaultPolicy"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "serverName": {
+      "type": "string"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "risk", "purpose"],
+        "properties": {
+          "name": { "type": "string" },
+          "risk": {
+            "type": "string",
+            "enum": ["read-only", "proposal-only", "narrow-write", "approval-gated"]
+          },
+          "purpose": { "type": "string" },
+          "inputs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "outputs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "defaultPolicy": {
+      "type": "object",
+      "required": ["readOutsideProject", "writeSourceCode", "compileUploadDeployPublish", "privateChainOfThoughtInFiles", "writeMode"],
+      "properties": {
+        "readOutsideProject": { "type": "boolean" },
+        "writeSourceCode": { "type": "boolean" },
+        "compileUploadDeployPublish": { "type": "string" },
+        "privateChainOfThoughtInFiles": { "type": "boolean" },
+        "writeMode": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

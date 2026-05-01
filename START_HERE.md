@@ -21,11 +21,12 @@ Read these files first:
 - Codex Cortex has been redesigned into a GitHub-ready local repository.
 - The global Codex skill `codex-cortex` has been installed under `C:\Users\me\.codex\skills\codex-cortex`.
 - Cortex has been installed into this repository under `.cortex/`.
-- The repository has a local git commit, but GitHub publishing is blocked until GitHub CLI or connector installation access is available.
+- The repository is public at `https://github.com/swpegasus/codex-cortex`.
+- A project-free distribution base is generated under `publish/base/`.
 
 ## Current Working Rule
 
-Do not compile, deploy, publish, or run risky automation without explicit user approval. For GitHub publishing, use available GitHub tooling only when credentials/installations are present.
+Do not compile, deploy, publish, or run risky automation without explicit user approval. For GitHub publishing, use authenticated GitHub CLI or an authorized connector.
 
 ## Project-Scoped Continuity
 
@@ -33,4 +34,4 @@ Use only this project's Cortex files unless the user explicitly redirects to ano
 
 ## Next Step
 
-Resolve GitHub publishing access, then push the local repository to GitHub.
+Optionally create a first release/tag, or continue into MCP server planning.

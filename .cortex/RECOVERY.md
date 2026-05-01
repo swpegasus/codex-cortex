@@ -29,13 +29,15 @@ Use this file when resuming after a crash, lost context, tool update, or long pa
 
 - Local repo exists at `D:\Codex Projects\_codex\codex-cortex`.
 - Local git repo is initialized on `main`.
-- Initial project commit exists.
-- Cortex root state files are installed but should be committed after validation.
-- GitHub publication is blocked by missing GitHub CLI and missing GitHub app installations in this session.
+- Repository is public at `https://github.com/swpegasus/codex-cortex`.
+- Root `.cortex/` is project-specific maintenance state.
+- `publish/base/` is the project-free generated distribution base.
+- GitHub CLI is installed and authenticated as `swpegasus`.
 
 ## Build / Test / Deploy Rules
 
 - Validation helper: `.\tools\Validate-Cortex.ps1 -ProjectRoot .\template`
+- Publish base generator: `.\tools\Build-PublishBase.ps1 -Clean`
 - Skill validation: `python C:\Users\me\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\me\.codex\skills\codex-cortex`
 - Publishing requires a valid GitHub remote and credentials/tool access.
 - Do not publish through unverified credentials or unrelated repositories.

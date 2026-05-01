@@ -4,7 +4,7 @@ Last updated: 2026-05-01
 
 ## Project Phase
 
-Published public repository.
+Public repository with integration base.
 
 ## Source Material
 
@@ -12,16 +12,19 @@ Published public repository.
 - `docs/`
 - `tools/`
 - `template/`
+- `prompts/`
+- `schemas/`
+- `publish/base/`
 - `AGENTS.md`
 - `START_HERE.md`
 - `.cortex/`
 
 ## Implementation State
 
-- Exists: GitHub-ready Codex Cortex repository structure, template, docs, installer, validator, metadata, MCP tool contract draft, and global Codex skill.
-- Missing: GitHub release/tag.
-- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, global skill validates, GitHub CLI 2.92.0 is installed/authenticated, MIT License was selected, and `main` was pushed to the GitHub repo.
-- Not verified: GitHub release flow, MCP server implementation, n8n workflow integration.
+- Exists: GitHub-ready Codex Cortex repository structure, blank template, publish base, docs, prompt pack, schemas, installer, validator, publish-base builder, metadata, MCP tool contract draft, GitHub community files, and global Codex skill.
+- Missing: GitHub release/tag, actual MCP server implementation, concrete n8n workflows.
+- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, publish base validator reports no missing required files, global skill validates, GitHub CLI 2.92.0 is installed/authenticated, MIT License was selected, and `main` was pushed to the GitHub repo.
+- Not verified: GitHub release flow, MCP server runtime behavior, n8n workflow execution.
 
 ## Active Source Folders
 
@@ -35,7 +38,8 @@ Keep Codex Cortex documentation-first and auditable. Build future automation in 
 ## Open Questions
 
 - Should a first release/tag be created now or after more MCP/server work?
+- Should schema validation remain dependency-free or use a JSON Schema validator?
 
 ## Next Step
 
-Optionally create a first release/tag when ready.
+Optionally create a first release/tag when ready; otherwise continue with MCP server planning.

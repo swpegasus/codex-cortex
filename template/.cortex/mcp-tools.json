@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/swpegasus/codex-cortex/main/schemas/mcp-tools.schema.json",
   "schemaVersion": "0.2",
   "serverName": "codex-cortex",
   "tools": [

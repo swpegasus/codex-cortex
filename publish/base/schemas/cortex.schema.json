@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/swpegasus/codex-cortex/schemas/cortex.schema.json",
+  "title": "Codex Cortex Metadata",
+  "type": "object",
+  "required": ["schemaVersion", "project", "cortex", "files", "recoveryOrder", "safetyGates", "updatePolicy"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "project": {
+      "type": "object",
+      "required": ["name", "root", "phase", "lastUpdated"],
+      "properties": {
+        "name": { "type": "string" },
+        "root": { "type": "string" },
+        "phase": { "type": "string" },
+        "lastUpdated": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "cortex": {
+      "type": "object",
+      "required": ["name", "stateRoot", "humanReadableSource"],
+      "properties": {
+        "name": { "type": "string" },
+        "stateRoot": { "type": "string" },
+        "humanReadableSource": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "recoveryOrder": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "safetyGates": {
+      "type": "object",
+      "properties": {
+        "compile": { "type": "string" },
+        "upload": { "type": "string" },
+        "deploy": { "type": "string" },
+        "publish": { "type": "string" },
+        "riskyAutomation": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "updatePolicy": {
+      "type": "object",
+      "required": ["scope", "privateChainOfThoughtAllowed", "preferredWriteMode", "autonomousLearningsUpdates"],
+      "properties": {
+        "scope": { "type": "string" },
+        "privateChainOfThoughtAllowed": { "type": "boolean" },
+        "preferredWriteMode": { "type": "string" },
+        "autonomousLearningsUpdates": { "type": "boolean" },
+        "appliesTo": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "markUnverifiedFacts": { "type": "boolean" },
+        "preserveUserRules": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

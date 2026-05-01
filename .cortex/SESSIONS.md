@@ -15,3 +15,11 @@
 - Not done: no GitHub release/tag created yet.
 - Status: repository is intended to be public after this update is pushed and visibility is changed.
 - Follow-up: consider creating a first tag/release.
+
+## 2026-05-01 - Integration and publish-base pass
+
+- Changed: added schemas, prompts, integration docs, research notes, GitHub community templates, publish-base builder, and generated `publish/base/`.
+- Verified: PowerShell scripts parse; root, template, and publish-base validation have no missing files; JSON parses; global skill validates after sync.
+- Not done: MCP server runtime, n8n workflow examples, release/tag.
+- Status: repository is cleaner for public users because root `.cortex/` state is separate from generated `publish/base/`.
+- Follow-up: decide whether to tag a release or continue into MCP server implementation.

@@ -1,0 +1,65 @@
+Codex Cortex Research Notes
+===========================
+
+Last updated: 2026-05-01
+
+Scope
+-----
+
+This note records primary-source research used to guide integration features.
+
+MCP
+---
+
+Sources:
+
+- https://modelcontextprotocol.io/specification/2025-06-18/server/tools
+- https://modelcontextprotocol.io/docs/learn/client-concepts
+- https://modelcontextprotocol.io/docs/learn/architecture
+
+Useful design implications:
+
+- Tools should use clear schemas and structured output where possible.
+- Tool results can reference or embed resources, so a future Cortex MCP server
+  should expose Cortex files as resources instead of returning one huge text blob.
+- Clients and servers should respect roots/project boundaries.
+- Elicitation and sampling should remain user-visible and approval-friendly.
+
+n8n
+---
+
+Sources:
+
+- https://docs.n8n.io/advanced-ai/mcp/accessing-n8n-mcp-server/
+- https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-langchain.mcptrigger/
+
+Useful design implications:
+
+- n8n can act as an MCP client or expose workflows as MCP tools.
+- Instance-level MCP access requires explicit enablement and per-workflow access.
+- Workflow descriptions matter because agents use them to identify inputs and behavior.
+- n8n MCP Server Trigger supports SSE and streamable HTTP, not stdio.
+- Queue-mode or replica deployments need stable routing for MCP connections.
+
+GitHub
+------
+
+Source:
+
+- https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories
+
+Useful design implications:
+
+- Public repos should include community health files such as README, license,
+  contributing guide, security policy, issue templates, and pull request template.
+- Issue templates belong under `.github/ISSUE_TEMPLATE/`.
+
+Codex Cortex Actions Taken
+--------------------------
+
+- Added `schemas/`.
+- Added `prompts/`.
+- Added `.github/` issue and pull request templates.
+- Added `docs/INTEGRATIONS.txt`.
+- Added `tools/Build-PublishBase.ps1`.
+- Generated `publish/base/`.
