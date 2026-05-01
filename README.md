@@ -138,8 +138,11 @@ The first automation target should be read-only validation. Narrow write tools f
 
 ## Before Publishing
 
-- Choose a license before making the repository public.
 - Review `docs/SAFETY.txt`.
 - Review both PowerShell tools.
 - Replace or remove any project-specific placeholders if publishing a customized copy.
 - Keep helper scripts narrow and auditable.
+
+## License
+
+Codex Cortex is released under the MIT License. See `LICENSE.txt`.

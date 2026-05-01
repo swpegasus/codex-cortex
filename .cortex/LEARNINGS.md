@@ -23,6 +23,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 - System-wide Codex Cortex use requires a skill under `C:\Users\me\.codex\skills\codex-cortex` - context: future agents can discover the skill from the Codex skills folder; evidence: skill validation passed; found: 2026-05-01
 - Project-local Cortex use requires root `AGENTS.md`, `START_HERE.md`, and `.cortex/` - context: future runs need deterministic recovery order; evidence: installed into the Codex Cortex repo; found: 2026-05-01
 - GitHub publishing works after `gh auth login` - context: `gh repo create swpegasus/codex-cortex --private --source . --remote origin --push` created the repo and pushed `main`; evidence: `https://github.com/swpegasus/codex-cortex`; found: 2026-05-01
+- Public GitHub visibility should follow license selection - context: repository was kept private until MIT License replaced the temporary no-license notice; evidence: `LICENSE.txt`; found: 2026-05-01
 
 ## Failed Approaches
 

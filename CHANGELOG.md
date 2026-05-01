@@ -13,3 +13,8 @@
 - Added compact metadata and MCP tool contract templates.
 - Added autonomous learning capture for agents, prompts, and threads.
 - Added temporary license notice pending final license selection.
+
+## 0.2.1 - 2026-05-01
+
+- Replaced the temporary license notice with the MIT License.
+- Prepared repository for public visibility.

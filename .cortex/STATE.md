@@ -4,7 +4,7 @@ Last updated: 2026-05-01
 
 ## Project Phase
 
-Published private repository.
+Published public repository.
 
 ## Source Material
 
@@ -19,8 +19,8 @@ Published private repository.
 ## Implementation State
 
 - Exists: GitHub-ready Codex Cortex repository structure, template, docs, installer, validator, metadata, MCP tool contract draft, and global Codex skill.
-- Missing: final license selection, public release decision, GitHub release/tag.
-- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, global skill validates, GitHub CLI 2.92.0 is installed/authenticated, and `main` was pushed to the private GitHub repo.
+- Missing: GitHub release/tag.
+- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, global skill validates, GitHub CLI 2.92.0 is installed/authenticated, MIT License was selected, and `main` was pushed to the GitHub repo.
 - Not verified: GitHub release flow, MCP server implementation, n8n workflow integration.
 
 ## Active Source Folders
@@ -34,9 +34,8 @@ Keep Codex Cortex documentation-first and auditable. Build future automation in 
 
 ## Open Questions
 
-- Which license should be selected before public release?
-- Should the private repository be made public after license selection?
+- Should a first release/tag be created now or after more MCP/server work?
 
 ## Next Step
 
-Choose a license, then decide whether to keep the repo private or make it public.
+Optionally create a first release/tag when ready.

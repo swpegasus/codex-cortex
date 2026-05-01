@@ -7,3 +7,11 @@
 - Not done: license selection, public release decision, GitHub release/tag, MCP server implementation, n8n workflow integration.
 - Status: private GitHub repo exists at `https://github.com/swpegasus/codex-cortex`.
 - Follow-up: choose license, decide whether to make repo public, create release/tag when ready.
+
+## 2026-05-01 - Public release setup
+
+- Changed: replaced temporary license notice with MIT License and prepared repository for public visibility.
+- Verified: Cortex validation still passes with no missing files or placeholders.
+- Not done: no GitHub release/tag created yet.
+- Status: repository is intended to be public after this update is pushed and visibility is changed.
+- Follow-up: consider creating a first tag/release.

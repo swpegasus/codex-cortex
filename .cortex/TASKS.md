@@ -6,12 +6,9 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 ## Active
 
-- [ ] Choose a real license - context: `LICENSE.txt` is currently a temporary no-license notice; source: repository review; added: 2026-05-01
-- [ ] Decide public/private release status - context: repo is currently private pending license selection; source: GitHub publication; added: 2026-05-01
-
 ## Blocked
 
-- [ ] Create GitHub release/tag - blocked by: license and release readiness decision; added: 2026-05-01
+- [ ] Create GitHub release/tag - blocked by: release readiness decision; added: 2026-05-01
 
 ## Later
 
@@ -28,6 +25,8 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 - [x] Install GitHub CLI system-wide - completed: 2026-05-01; notes: installed `gh` 2.92.0 with `winget`; PATH refresh or new shell may be needed
 - [x] Authenticate GitHub CLI - completed: 2026-05-01; notes: authenticated as `swpegasus`
 - [x] Publish to GitHub - completed: 2026-05-01; notes: created private repo `swpegasus/codex-cortex` and pushed `main`
+- [x] Choose a real license - completed: 2026-05-01; notes: selected MIT License for broad reuse of templates and tooling
+- [x] Make repository public - completed: 2026-05-01; notes: switched `swpegasus/codex-cortex` from private to public
 
 ## Rule
 

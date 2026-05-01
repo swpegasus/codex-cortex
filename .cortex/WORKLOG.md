@@ -16,6 +16,7 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Add `LEARNINGS.md` - reason: future agents, prompts, and threads need a durable place for failures, caveats, and do-not-repeat lessons; evidence: `template/.cortex/LEARNINGS.md`; date: 2026-05-01
 - Install a global `codex-cortex` skill - reason: future Codex agents need system-level instructions for installing and maintaining Cortex state; evidence: `C:\Users\me\.codex\skills\codex-cortex`; date: 2026-05-01
 - Publish first GitHub repo as private - reason: project still has temporary no-license notice, so private is safer until license is chosen; evidence: `https://github.com/swpegasus/codex-cortex`; date: 2026-05-01
+- Select MIT License - reason: Codex Cortex is a reusable template/tooling project intended for broad adoption with low friction; evidence: `LICENSE.txt`; date: 2026-05-01
 
 ## Evidence
 
@@ -24,12 +25,12 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Template validation found zero missing files and expected placeholder hits; date: 2026-05-01
 - Global skill validation returned `Skill is valid!`; date: 2026-05-01
 - GitHub CLI authenticated as `swpegasus` and pushed `main` to `swpegasus/codex-cortex`; date: 2026-05-01
+- MIT License added before switching the repository public; date: 2026-05-01
 
 ## Open Questions
 
-- Which license should replace `LICENSE.txt` before public release?
-- Should `swpegasus/codex-cortex` remain private or be made public after license selection?
+- Should a first release/tag be created now or after the MCP/server direction is more complete?
 
 ## Next Step
 
-- Choose a license, decide visibility, and optionally create a release/tag.
+- Optionally create a first release/tag.
