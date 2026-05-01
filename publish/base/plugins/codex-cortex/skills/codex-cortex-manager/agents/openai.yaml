@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex Cortex Manager"
-  short_description: "Install and maintain Cortex continuity across projects."
-  default_prompt: "Install or maintain Codex Cortex continuity for this project."
+  short_description: "Install, update, and maintain Cortex across projects."
+  default_prompt: "Install, update-check, or maintain Codex Cortex continuity for this project."

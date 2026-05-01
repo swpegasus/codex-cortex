@@ -23,6 +23,8 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Require final-position blocking questions - reason: user wants paused runs to be obvious and not buried in long output; evidence: `AGENTS.md`, `template/AGENTS.md`, `prompts/`, and `docs/INTEGRATIONS.txt`; date: 2026-05-01
 - Add cross-project Codex plugin skill - reason: the distributable skill must work across all projects rather than being locked to this repository; evidence: `plugins/codex-cortex/skills/codex-cortex-manager/SKILL.md`; date: 2026-05-01
 - Refresh plugin skill during builds - reason: packaged skill assets should track the current repository template, docs, prompts, and validator; evidence: `tools/Build-CodexCortexPlugin.ps1` and `tools/Build-PublishBase.ps1`; date: 2026-05-01
+- Add update checks as metadata-first and approval-gated - reason: installed agents should discover GitHub updates while preserving user control before downloading or installing; evidence: `tools/Check-CodexCortexUpdates.ps1`, `tools/Update-CodexCortexFromGitHub.ps1`, and `docs/UPDATES.txt`; date: 2026-05-01
+- Offer update-check automation after install - reason: users may want periodic awareness without automatic downloads; evidence: `docs/UPDATES.txt` and `prompts/check-updates.md`; date: 2026-05-01
 
 ## Evidence
 
@@ -41,6 +43,8 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - PowerShell parse passed for the plugin build script, plugin skill installer, and project installer; date: 2026-05-01
 - Temporary install smoke test from packaged `codex-cortex-manager` skill had zero missing files, zero invalid JSON files, and zero recovery-order missing files; date: 2026-05-01
 - Legacy installed `codex-cortex` skill was converted into a compatibility alias pointing to `codex-cortex-manager`; date: 2026-05-01
+- Update checker returns local and remote version metadata without downloading; date: 2026-05-01
+- Approval-gated updater returns `approval_required` when run without `-ApproveDownload`; date: 2026-05-01
 
 ## Open Questions
 

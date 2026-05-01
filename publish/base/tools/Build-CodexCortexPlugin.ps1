@@ -56,9 +56,24 @@ Copy-Item -Path (Join-Path $repoRoot "prompts\*.md") -Destination $promptsTarget
 $scriptsRoot = Join-Path $skillRoot "scripts"
 New-Item -ItemType Directory -Force -Path $scriptsRoot | Out-Null
 Copy-Item -LiteralPath (Join-Path $repoRoot "tools\Validate-Cortex.ps1") -Destination (Join-Path $scriptsRoot "Validate-CortexProject.ps1") -Force
+Copy-Item -LiteralPath (Join-Path $repoRoot "tools\Check-CodexCortexUpdates.ps1") -Destination (Join-Path $scriptsRoot "Check-CodexCortexUpdates.ps1") -Force
+Copy-Item -LiteralPath (Join-Path $repoRoot "tools\Update-CodexCortexFromGitHub.ps1") -Destination (Join-Path $scriptsRoot "Update-CodexCortexFromGitHub.ps1") -Force
 
 $pluginManifestPath = Join-Path $pluginRoot ".codex-plugin\plugin.json"
-Get-Content -LiteralPath $pluginManifestPath -Raw | ConvertFrom-Json | Out-Null
+$pluginManifest = Get-Content -LiteralPath $pluginManifestPath -Raw | ConvertFrom-Json
+
+$versionInfo = [ordered]@{
+    package = "codex-cortex-manager"
+    pluginVersion = $pluginManifest.version
+    repository = $pluginManifest.repository
+    sourceCommit = $null
+    sourceCommitNote = "Omitted from committed packages to avoid false update checks after the package commit is created. Use pluginVersion and CHANGELOG for update decisions."
+    generatedAt = (Get-Date).ToString("s")
+    updateCheckScript = "scripts/Check-CodexCortexUpdates.ps1"
+    updateScript = "scripts/Update-CodexCortexFromGitHub.ps1"
+}
+
+$versionInfo | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $referencesRoot "VERSION.json") -Encoding UTF8
 
 Write-Output "Codex Cortex plugin skill package refreshed from repository source."
 

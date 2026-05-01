@@ -80,6 +80,13 @@ plugins/codex-cortex/
   Codex plugin package containing the cross-project `codex-cortex-manager`
   skill and a system-skill installer.
 
+tools/Check-CodexCortexUpdates.ps1
+  Checks GitHub for public update metadata and documented changes.
+
+tools/Update-CodexCortexFromGitHub.ps1
+  Downloads and optionally installs updates only when explicit approval switches
+  are provided.
+
 schemas/
   JSON Schemas for Cortex metadata and MCP tool contracts.
 
@@ -120,6 +127,19 @@ The safest automation path is:
 4. narrow task update tools
 5. proposal-only closeout generation
 6. approval-gated build, upload, deploy, or publish actions
+7. approval-gated update download and install actions
+
+Update Path
+-----------
+
+Installed agents can check GitHub for newer Cortex versions by reading public
+manifest, commit, and changelog metadata. They should summarize documented
+changes first, then ask for permission before downloading. They should ask again
+before installing.
+
+Agents should also offer a recurring update-check automation. The default
+interval is 30 days, but users can choose another interval. The automation should
+check and summarize only.
 
 Publish Base
 ------------

@@ -1,0 +1,71 @@
+Codex Cortex Updates
+====================
+
+Purpose
+-------
+
+Codex Cortex can check GitHub for newer framework, plugin, skill, template,
+tool, and documentation versions. Update checking is separate from update
+downloading and installation.
+
+The expected safety flow is:
+
+1. Check GitHub for version and change documentation.
+2. Summarize the documented changes to the user.
+3. Ask for explicit approval before downloading an update.
+4. Ask for explicit approval again before installing a downloaded update.
+
+Check Only
+----------
+
+Use this command to check for updates without installing anything:
+
+  tools/Check-CodexCortexUpdates.ps1
+
+The check reads GitHub metadata and the public changelog. It returns:
+
+- local version
+- local source commit when available
+- remote version
+- remote commit
+- whether a version update appears available
+- whether the packaged source commit differs from the remote commit, when both are known
+- the top documented changelog section
+- a reminder that download approval is required
+
+Download Gate
+-------------
+
+Use this command only after the user approves downloading the update:
+
+  tools/Update-CodexCortexFromGitHub.ps1 -ApproveDownload
+
+The script downloads the repository archive into a temporary folder and returns
+the path for review. It does not install the system skill unless install approval
+is also given.
+
+Install Gate
+------------
+
+Use this command only after the user approves installation:
+
+  tools/Update-CodexCortexFromGitHub.ps1 -ApproveDownload -InstallSystemSkill -ApproveInstall
+
+This replaces the installed `codex-cortex-manager` skill with the downloaded
+version.
+
+Automation Offer
+----------------
+
+When Codex Cortex is installed for an agent or project, the agent should ask
+whether the user wants a recurring update check automation. The default interval
+is 30 days. If the user's automation system does not support an exact 30-day
+interval, ask whether to use the closest supported monthly or weekly schedule.
+
+The automation must check and summarize updates only. It must not download or
+install updates without explicit user approval.
+
+Preferred waiting format:
+
+  Waiting for your response:
+  Do you want a recurring Codex Cortex update check automation? Default is every 30 days; you can choose a different interval.

@@ -18,6 +18,8 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 ## Done
 
+- [x] Add GitHub update-check flow - completed: 2026-05-01; notes: added check-only metadata script, approval-gated update script, update docs, prompt, and MCP tool contract entries
+- [x] Add update automation guidance - completed: 2026-05-01; notes: agents should offer a 30-day default recurring update check but must ask permission before creating it
 - [x] Add cross-project Codex plugin skill - completed: 2026-05-01; notes: created `plugins/codex-cortex` with `codex-cortex-manager` skill, plugin manifest, marketplace entry, and system skill installer
 - [x] Add plugin build refresh - completed: 2026-05-01; notes: `Build-CodexCortexPlugin.ps1` refreshes the packaged skill from repository source and `Build-PublishBase.ps1` calls it
 - [x] Install cross-project system skill - completed: 2026-05-01; notes: installed `C:\Users\me\.codex\skills\codex-cortex-manager` and validated it

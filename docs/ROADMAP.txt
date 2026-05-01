@@ -12,6 +12,7 @@ Immediate
 - Keep publish/base separate from root project state.
 - Keep the Codex plugin skill package refreshed from repository source.
 - Keep prompts and schemas versioned.
+- Add approval-gated GitHub update checks for installed skills, tools, prompts, and templates.
 
 Next
 ----
@@ -22,6 +23,7 @@ Next
 - Add optional project lanes for firmware, backend, frontend, hardware, and deployment.
 - Add schema validation to Validate-Cortex.ps1.
 - Add generated archive packages for release attachments.
+- Add release-aware update channels beyond the default main-branch check.
 
 Later
 -----

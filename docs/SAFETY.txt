@@ -51,6 +51,20 @@ tools/Build-CodexCortexPlugin.ps1:
 - copies template, docs, prompts, and the validator into the plugin skill package
 - optionally installs the refreshed skill into the local Codex skills folder
 
+tools/Check-CodexCortexUpdates.ps1:
+
+- contacts GitHub to read public manifest, commit, and changelog metadata
+- reports documented changes and whether an update appears available
+- does not download repository archives
+- does not install or overwrite files
+
+tools/Update-CodexCortexFromGitHub.ps1:
+
+- checks documented changes before any download
+- refuses to download unless `-ApproveDownload` is provided
+- downloads a GitHub archive to a temporary folder for review
+- refuses to install the system skill unless `-InstallSystemSkill` and `-ApproveInstall` are provided
+
 plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1:
 
 - copies the packaged `codex-cortex-manager` skill into the local Codex skills folder
@@ -96,9 +110,11 @@ To audit this project, read:
 8. tools/Install-Cortex.ps1
 9. tools/Build-CodexCortexPlugin.ps1
 10. tools/Build-PublishBase.ps1
-11. plugins/codex-cortex/.codex-plugin/plugin.json
-12. plugins/codex-cortex/skills/codex-cortex-manager/SKILL.md
-13. schemas/cortex.schema.json
-14. schemas/mcp-tools.schema.json
-15. template/.cortex/meta.json
-16. template/.cortex/mcp-tools.json
+11. tools/Check-CodexCortexUpdates.ps1
+12. tools/Update-CodexCortexFromGitHub.ps1
+13. plugins/codex-cortex/.codex-plugin/plugin.json
+14. plugins/codex-cortex/skills/codex-cortex-manager/SKILL.md
+15. schemas/cortex.schema.json
+16. schemas/mcp-tools.schema.json
+17. template/.cortex/meta.json
+18. template/.cortex/mcp-tools.json

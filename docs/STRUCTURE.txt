@@ -60,13 +60,19 @@ plugins/codex-cortex/
 
 plugins/codex-cortex/skills/codex-cortex-manager/
   System-installable Codex skill for installing and maintaining Cortex across
-  any project.
+  any project. It also includes update-check and approval-gated update scripts.
 
 plugins/codex-cortex/scripts/
   Plugin-level helper scripts, including system skill installation.
 
 schemas/
   Machine-readable JSON Schemas for metadata and MCP tool contracts.
+
+tools/Check-CodexCortexUpdates.ps1
+  GitHub metadata and changelog update checker.
+
+tools/Update-CodexCortexFromGitHub.ps1
+  Approval-gated downloader and optional system skill installer.
 
 publish/base/
   Generated project-free base for distribution and reuse.

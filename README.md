@@ -114,6 +114,28 @@ Codex Cortex also ships a Codex plugin under `plugins/codex-cortex/`. The plugin
 
 That skill is meant to be installed once into the Codex skills folder so future agents can install, validate, and maintain Cortex state across any project. It provides the shared procedure; each project still keeps its own local `.cortex/` files.
 
+The manager skill can also check GitHub for updated Cortex framework files, tools, prompts, templates, and skill package improvements. The check step reads public version, commit, and changelog metadata only. It must summarize documented changes and ask for approval before downloading or installing updates.
+
+Check for updates:
+
+```powershell
+.\tools\Check-CodexCortexUpdates.ps1
+```
+
+After approval, download an update for review:
+
+```powershell
+.\tools\Update-CodexCortexFromGitHub.ps1 -ApproveDownload
+```
+
+After a second approval, install the updated system skill:
+
+```powershell
+.\tools\Update-CodexCortexFromGitHub.ps1 -ApproveDownload -InstallSystemSkill -ApproveInstall
+```
+
+Agents should also ask whether to create a recurring update-check automation. The default interval is 30 days, but the user can choose a different interval.
+
 Install or refresh the system skill from this repository with:
 
 ```powershell
@@ -168,6 +190,7 @@ For a plain text audit, read:
 - `docs/STRUCTURE.txt`
 - `docs/INTEGRATIONS.txt`
 - `docs/CODEX_PLUGIN.txt`
+- `docs/UPDATES.txt`
 - `docs/RESEARCH_NOTES.txt`
 - `tools/Validate-Cortex.ps1`
 - `tools/Install-Cortex.ps1`

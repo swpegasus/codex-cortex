@@ -37,12 +37,27 @@
       "name": "prepare_closeout",
       "risk": "proposal-only",
       "purpose": "Generate proposed updates for state, sessions, tasks, worklog, learnings, and final response."
+    },
+    {
+      "name": "check_cortex_updates",
+      "risk": "read-only",
+      "purpose": "Check public GitHub manifest, commit, and changelog metadata for newer Cortex framework, skill, template, prompt, or tool versions without downloading updates.",
+      "outputs": ["localVersion", "remoteVersion", "remoteCommit", "documentedChanges", "updateAvailable", "approvalRequiredBeforeDownload"]
+    },
+    {
+      "name": "prepare_cortex_update",
+      "risk": "approval-gated",
+      "purpose": "Download or install a Cortex update only after documented changes are summarized and explicit user approval is given.",
+      "inputs": ["repository", "branch", "approveDownload", "installSystemSkill", "approveInstall"],
+      "outputs": ["downloadRoot", "downloadedSkill", "installedSkill", "nextStep"]
     }
   ],
   "defaultPolicy": {
     "readOutsideProject": false,
     "writeSourceCode": false,
     "compileUploadDeployPublish": "requires explicit approval",
+    "networkUpdateCheck": "allowed only for public metadata and changelog checks",
+    "downloadInstallUpdates": "requires explicit approval after documented changes are shown",
     "privateChainOfThoughtInFiles": false,
     "writeMode": "append or narrow patch"
   }

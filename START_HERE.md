@@ -24,6 +24,7 @@ Read these files first:
 - The repository is public at `https://github.com/swpegasus/codex-cortex`.
 - A project-free distribution base is generated under `publish/base/`.
 - A Codex plugin package exists under `plugins/codex-cortex/`.
+- The manager skill includes GitHub update-check scripts that summarize documented changes before any approval-gated download or install.
 
 ## Current Working Rule
 

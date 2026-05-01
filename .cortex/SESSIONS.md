@@ -47,3 +47,11 @@
 - Not done: no MCP server runtime yet.
 - Status: plugin package is refreshed from repository source during builds.
 - Follow-up: regenerate publish base, run full validation, commit, and push.
+
+## 2026-05-01 - GitHub update checks
+
+- Changed: added check-only GitHub update metadata script, approval-gated download/install script, update docs, update prompt, and MCP tool contract entries.
+- Verified: root validation has zero missing files/placeholders/invalid JSON; template and publish-base validation have zero missing files and expected placeholders; update checker works without download; updater refuses download without approval; packaged and installed skills validate.
+- Not done: no recurring automation has been created yet because it requires user permission.
+- Status: update flow is metadata-first, then download approval, then install approval.
+- Follow-up: ask whether to create a 30-day default update-check automation.

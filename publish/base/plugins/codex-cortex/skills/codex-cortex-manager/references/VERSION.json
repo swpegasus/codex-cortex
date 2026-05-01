@@ -1,0 +1,10 @@
+﻿{
+    "package":  "codex-cortex-manager",
+    "pluginVersion":  "0.1.0-alpha",
+    "repository":  "https://github.com/swpegasus/codex-cortex",
+    "sourceCommit":  null,
+    "sourceCommitNote":  "Omitted from committed packages to avoid false update checks after the package commit is created. Use pluginVersion and CHANGELOG for update decisions.",
+    "generatedAt":  "2026-05-01T00:12:04",
+    "updateCheckScript":  "scripts/Check-CodexCortexUpdates.ps1",
+    "updateScript":  "scripts/Update-CodexCortexFromGitHub.ps1"
+}

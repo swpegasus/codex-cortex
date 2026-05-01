@@ -86,6 +86,11 @@ The skill is the preferred central entry point for future Codex agents. It
 provides install, validation, recovery, learning-log, and closeout procedures,
 while each project keeps its own `.cortex/` state locally.
 
+The skill also provides update awareness. Future agents can use it to check
+GitHub for newer documented framework, template, prompt, tool, and skill
+versions. Agents must summarize the documented changes and ask for approval
+before downloading. They must ask again before installing.
+
 Before publishing a new build, refresh the packaged skill from repository source:
 
   tools/Build-CodexCortexPlugin.ps1
@@ -94,6 +99,24 @@ To make the skill available to all future local Codex agents after an approved
 update, run:
 
   plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1 -Force
+
+Update Automation
+-----------------
+
+Agents should offer a recurring update check automation after Cortex or the
+manager skill is installed. The default interval is 30 days, but the user can
+choose another interval.
+
+The automation should run a check-only workflow and summarize:
+
+- local version
+- remote version
+- remote commit
+- documented changelog section
+- whether an update appears available
+
+It must not download or install an update without explicit approval from the
+user after the change summary is shown.
 
 Prompt Direction
 ----------------

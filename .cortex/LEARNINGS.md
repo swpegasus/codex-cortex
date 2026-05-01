@@ -14,6 +14,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Command / Shell / Path Caveats
 
+- Do not comma-separate command expressions inside PowerShell array literals - requirement: wrap each expression in parentheses or put each expression on its own line without commas; symptom if missed: a cmdlet like `Join-Path` receives `System.Object[]` for a string parameter; found: 2026-05-01
 - Git commits require repository-local identity if global git identity is missing - requirement: set `git config user.name` and `git config user.email`; symptom if missed: commit fails with `Author identity unknown`; found: 2026-05-01
 - GitHub CLI was installed through `winget` - requirement: refresh PATH or open a new shell after install; symptom if missed: current shell may still not find `gh`; evidence: `C:\Program Files\GitHub CLI\gh.exe`; found: 2026-05-01
 - GitHub CLI still requires authentication after install - requirement: run `gh auth login`; symptom if missed: `You are not logged into any GitHub hosts`; found: 2026-05-01
@@ -21,6 +22,8 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Required To Make Things Work
 
+- Update checks should fetch documented changes before downloads - context: user wants agents to know about GitHub updates but preserve approval before download/install; better path: run check-only script, summarize changelog, ask approval, then run updater with explicit approval switches; found: 2026-05-01
+- Recurring update checks should be opt-in - context: user wants a 30-day default automation but only with permission; better path: ask before creating automation and keep automation check-only unless user approves download/install; found: 2026-05-01
 - Blocking questions should be final and visually distinct - context: user wants paused runs to be obvious in long chat or workflow output; better path: end with `Waiting for your response:` followed by one clear question or requested decision; found: 2026-05-01
 - System-wide Codex Cortex use requires a skill under `C:\Users\me\.codex\skills\codex-cortex` - context: future agents can discover the skill from the Codex skills folder; evidence: skill validation passed; found: 2026-05-01
 - Project-local Cortex use requires root `AGENTS.md`, `START_HERE.md`, and `.cortex/` - context: future runs need deterministic recovery order; evidence: installed into the Codex Cortex repo; found: 2026-05-01

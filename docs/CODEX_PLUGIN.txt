@@ -27,7 +27,8 @@ plugins/codex-cortex/skills/codex-cortex-manager/assets/template/
   The blank Cortex template copied into target projects.
 
 plugins/codex-cortex/skills/codex-cortex-manager/scripts/
-  Skill-local install and validation scripts.
+  Skill-local install, validation, update-check, and approval-gated update
+  scripts.
 
 plugins/codex-cortex/skills/codex-cortex-manager/references/
   Documentation and prompt references for future agents.
@@ -54,6 +55,21 @@ The publish-base builder calls this plugin build script automatically:
 
   tools/Build-PublishBase.ps1 -Clean
 
+Update Awareness
+----------------
+
+The packaged skill includes update scripts copied from repository source:
+
+  scripts/Check-CodexCortexUpdates.ps1
+  scripts/Update-CodexCortexFromGitHub.ps1
+
+The check script fetches public GitHub manifest, commit, and changelog metadata.
+It does not download or install updates.
+
+The update script refuses to download unless run with `-ApproveDownload`. It
+refuses to install the system skill unless run with `-InstallSystemSkill` and
+`-ApproveInstall`.
+
 System Skill Install
 --------------------
 
@@ -71,6 +87,11 @@ If CODEX_HOME is not set, it targets:
 
 After install, future agents can use `codex-cortex-manager` to work across
 projects.
+
+Future agents should also ask whether the user wants a recurring update check
+automation. The default interval is 30 days, but the user can choose a different
+interval. The automation must check and summarize only; it must not download or
+install updates without explicit approval.
 
 Target Project Install
 ----------------------

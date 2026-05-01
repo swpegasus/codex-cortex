@@ -1,6 +1,6 @@
 ---
 name: codex-cortex-manager
-description: Install, validate, and maintain Codex Cortex continuity across any project root. Use when a user asks to set up Cortex, install project memory, create AGENTS/START_HERE/.cortex files, validate Cortex structure, preserve durable learnings for future agents or prompts, prepare a project for MCP/n8n workflows, or make Cortex available system-wide to future Codex agents.
+description: Install, validate, update, and maintain Codex Cortex continuity across any project root. Use when a user asks to set up Cortex, install project memory, create AGENTS/START_HERE/.cortex files, validate Cortex structure, check GitHub for updated Cortex tools/templates/skills, preserve durable learnings for future agents or prompts, prepare a project for MCP/n8n workflows, or make Cortex available system-wide to future Codex agents.
 ---
 
 # Codex Cortex Manager
@@ -59,6 +59,30 @@ Run the read-only validator:
 
 Interpret placeholder findings by context. Placeholders are expected in the reusable template, but installed project files should be filled in.
 
+## Check For Cortex Updates
+
+Use the update checker to look for newer Codex Cortex framework, plugin, skill, template, docs, prompt, or tool versions:
+
+```powershell
+.\scripts\Check-CodexCortexUpdates.ps1
+```
+
+The checker may contact GitHub for public manifest, commit, and changelog metadata. It must not download or install updates. Summarize the documented changes and ask before downloading anything.
+
+Download only after explicit approval:
+
+```powershell
+.\scripts\Update-CodexCortexFromGitHub.ps1 -ApproveDownload
+```
+
+Install only after explicit install approval:
+
+```powershell
+.\scripts\Update-CodexCortexFromGitHub.ps1 -ApproveDownload -InstallSystemSkill -ApproveInstall
+```
+
+After checking updates, ask whether the user wants a recurring update check automation. Default to 30 days, and let the user choose another interval. The automation may check and summarize updates only; it must not download or install without explicit approval.
+
 ## Maintain Existing Cortex State
 
 During work, update Cortex files when the facts change:
@@ -78,6 +102,8 @@ Load only what is needed:
 - `references/SAFETY.txt` - audit and non-malicious behavior notes
 - `references/STRUCTURE.txt` - naming scheme and installed file map
 - `references/CODEX_PLUGIN.txt` - plugin packaging and system-skill install behavior
+- `references/UPDATES.txt` - GitHub update checks, approval gates, and automation offer
+- `references/VERSION.json` - packaged skill source version metadata
 - `references/INTEGRATIONS.txt` - MCP, n8n, GitHub, and prompt guidance
 - `references/ROADMAP.txt` - staged automation direction
 - `references/prompts/` - reusable install, resume, closeout, and research prompts

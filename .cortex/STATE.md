@@ -22,9 +22,9 @@ Alpha release.
 
 ## Implementation State
 
-- Exists: GitHub-ready Codex Cortex repository structure, blank template, publish base, docs, prompt pack, schemas, installer, validator, plugin builder, publish-base builder, metadata, MCP tool contract draft, GitHub community files, Codex plugin package, and cross-project `codex-cortex-manager` system skill.
+- Exists: GitHub-ready Codex Cortex repository structure, blank template, publish base, docs, prompt pack, schemas, installer, validator, plugin builder, update checker, approval-gated updater, publish-base builder, metadata, MCP tool contract draft, GitHub community files, Codex plugin package, and cross-project `codex-cortex-manager` system skill.
 - Missing: actual MCP server implementation, concrete n8n workflows.
-- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, publish base validator reports no missing required files, plugin JSON parses, global `codex-cortex-manager` skill validates, a temporary project smoke install has zero missing files and zero invalid JSON files, GitHub CLI 2.92.0 is installed/authenticated, MIT License was selected, `main` was pushed to the GitHub repo, and the GitHub release/tag is named `alpha`.
+- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, publish base validator reports no missing required files, plugin JSON parses, global `codex-cortex-manager` skill validates, update check returns metadata without requiring download, updater stops at `approval_required` without approval switches, a temporary project smoke install has zero missing files and zero invalid JSON files, GitHub CLI 2.92.0 is installed/authenticated, MIT License was selected, `main` was pushed to the GitHub repo, and the GitHub release/tag is named `alpha`.
 - Not verified: MCP server runtime behavior, n8n workflow execution.
 
 ## Active Source Folders
