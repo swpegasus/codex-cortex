@@ -18,6 +18,7 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 ## Done
 
+- [x] Add project-aware plugin behavior - completed: 2026-05-01; notes: manager skill, template, prompts, docs, and MCP policy now state target project first and cross-project reuse rules
 - [x] Add GitHub update-check flow - completed: 2026-05-01; notes: added check-only metadata script, approval-gated update script, update docs, prompt, and MCP tool contract entries
 - [x] Add update automation guidance - completed: 2026-05-01; notes: agents should offer a 30-day default recurring update check but must ask permission before creating it
 - [x] Add cross-project Codex plugin skill - completed: 2026-05-01; notes: created `plugins/codex-cortex` with `codex-cortex-manager` skill, plugin manifest, marketplace entry, and system skill installer

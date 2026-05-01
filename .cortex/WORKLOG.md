@@ -25,6 +25,7 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Refresh plugin skill during builds - reason: packaged skill assets should track the current repository template, docs, prompts, and validator; evidence: `tools/Build-CodexCortexPlugin.ps1` and `tools/Build-PublishBase.ps1`; date: 2026-05-01
 - Add update checks as metadata-first and approval-gated - reason: installed agents should discover GitHub updates while preserving user control before downloading or installing; evidence: `tools/Check-CodexCortexUpdates.ps1`, `tools/Update-CodexCortexFromGitHub.ps1`, and `docs/UPDATES.txt`; date: 2026-05-01
 - Offer update-check automation after install - reason: users may want periodic awareness without automatic downloads; evidence: `docs/UPDATES.txt` and `prompts/check-updates.md`; date: 2026-05-01
+- Make the plugin project-aware - reason: user wants the current project to stay primary while allowing other projects as optional references; evidence: `codex-cortex-manager/SKILL.md`, `template/AGENTS.md`, `template/.cortex/RULES.md`, and `docs/CODEX_PLUGIN.txt`; date: 2026-05-01
 
 ## Evidence
 

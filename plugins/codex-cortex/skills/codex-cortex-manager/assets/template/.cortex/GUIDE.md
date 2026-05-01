@@ -10,6 +10,8 @@ Use this file as the operating guide for coding threads, reusable prompts, and a
 - Explain what is being checked or changed before substantial work.
 - Preserve approval gates.
 - If work must stop for user input, make the blocking question the final text posted and make it visually distinct.
+- Treat the current project as the primary source of truth.
+- Use other projects only as optional references. Ask before non-trivial cross-project reuse.
 
 ## Autonomous Learning
 
@@ -24,6 +26,7 @@ Use this file as the operating guide for coding threads, reusable prompts, and a
 - Avoid near-identical functions when one argument-driven function is clearer.
 - Add comments when behavior is not obvious.
 - Keep unrelated refactors out of scoped tasks unless needed for correctness.
+- If a pattern from another project is useful, apply only trivial compatible reuse without asking. Ask before adapting anything that changes architecture, dependencies, behavior, workflow, deployment, or direction.
 
 ## Validation
 

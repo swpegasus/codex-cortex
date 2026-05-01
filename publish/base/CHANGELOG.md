@@ -6,6 +6,7 @@
 - Includes Codex Cortex blank template, publish base, validation and install tools, schemas, prompt pack, integration docs, GitHub community files, and MIT License.
 - Adds Codex plugin packaging with the cross-project `codex-cortex-manager` skill.
 - Adds approval-gated GitHub update checks and documented update automation guidance.
+- Adds project-aware plugin rules for target-project-first context and approval before non-trivial cross-project reuse.
 - Known gaps: no MCP server runtime, no n8n workflow examples, and no full JSON Schema validation beyond JSON parsing.
 
 ## 0.2.0 - 2026-05-01

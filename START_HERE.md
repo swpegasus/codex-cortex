@@ -25,6 +25,7 @@ Read these files first:
 - A project-free distribution base is generated under `publish/base/`.
 - A Codex plugin package exists under `plugins/codex-cortex/`.
 - The manager skill includes GitHub update-check scripts that summarize documented changes before any approval-gated download or install.
+- The manager skill is project-aware: target project files are primary, other projects are references only, and non-trivial cross-project reuse should be proposed before implementation.
 
 ## Current Working Rule
 

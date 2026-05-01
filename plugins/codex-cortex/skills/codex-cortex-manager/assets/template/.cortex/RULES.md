@@ -25,6 +25,14 @@ Use these as portable project/user instructions.
 
 - Agents, reusable prompts, and normal threads should record reusable failures, caveats, quoting requirements, compatibility findings, and do-not-repeat lessons in `LEARNINGS.md` during work.
 
+## Project Awareness
+
+- Use this project's files as the source of truth.
+- Other projects may be used as optional references for reusable patterns, examples, or tools.
+- Do not let another project's assumptions, rules, state, or architecture override this project.
+- Trivial compatible reuse can be applied without asking.
+- Ask before adapting non-trivial architecture, dependencies, behavior, workflow, deployment, or project direction from another project.
+
 ## Blocking Questions
 
 - If work must stop for user input, put the blocking question at the very end of the response.

@@ -54,6 +54,8 @@
   ],
   "defaultPolicy": {
     "readOutsideProject": false,
+    "targetProjectPrimary": true,
+    "crossProjectReferences": "allowed as optional references only; non-trivial reuse requires user approval",
     "writeSourceCode": false,
     "compileUploadDeployPublish": "requires explicit approval",
     "networkUpdateCheck": "allowed only for public metadata and changelog checks",

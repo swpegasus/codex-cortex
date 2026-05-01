@@ -27,6 +27,18 @@ Codex Cortex provides templates for:
 - machine-readable metadata
 - draft MCP tool contracts
 
+Project Awareness
+-----------------
+
+Codex Cortex is project-aware. The current target project is always the primary
+context and source of truth.
+
+Other projects may be used as optional reference material when they help with a
+task, but their state, rules, and assumptions must not override the target
+project. Trivial compatible reuse can be applied without interrupting the user.
+Non-trivial reuse from another project should be presented as a suggestion and
+requires user approval before implementation.
+
 What It Does Not Do
 -------------------
 

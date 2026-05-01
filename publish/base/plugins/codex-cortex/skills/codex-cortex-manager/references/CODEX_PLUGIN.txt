@@ -14,6 +14,24 @@ keeps its own local `.cortex/` state.
 This means the plugin provides shared behavior, but not shared project state.
 Project facts stay in the project being worked on.
 
+Project Awareness
+-----------------
+
+The plugin is project-aware. Its primary context is always the target project
+the user is working in.
+
+Agents should read the target project's `START_HERE.md`, `AGENTS.md`,
+`.cortex/`, and source files before using outside examples. Other projects may
+be used as reference material for reusable patterns, tools, or prior solutions,
+but they do not override the target project's rules or state.
+
+If reuse from another project is trivial and clearly compatible, the agent can
+apply it without stopping. If reuse would change architecture, dependencies,
+behavior, workflow, deployment, or project direction, the agent should mention
+the source project pattern and ask before implementing it.
+
+When uncertain, ask before implementation.
+
 Included Files
 --------------
 

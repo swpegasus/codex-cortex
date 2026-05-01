@@ -64,6 +64,9 @@ It is designed to preserve:
 ## Core Rules
 
 - Keep continuity scoped to the current project.
+- Treat the current project as the primary context and source of truth.
+- Use other projects only as optional references for reusable patterns, examples, or tools.
+- Apply trivial compatible reuse without asking, but ask before importing non-trivial architecture, dependencies, behavior, or workflow from another project.
 - Keep source code and Cortex state separate.
 - Do not store private chain-of-thought.
 - Record public conclusions, evidence, failed approaches, and next steps.

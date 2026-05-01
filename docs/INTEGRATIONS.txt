@@ -29,6 +29,11 @@ The MCP server should respect client roots and project boundaries. It should
 work from relative paths inside the project root and should not read unrelated
 projects unless the user explicitly allows it.
 
+If another project is available as a useful reference, clients and agents should
+still treat the target project as primary. Cross-project references are allowed
+for reusable patterns and prior solutions, but non-trivial adaptation should be
+presented to the user before implementation.
+
 Sampling and elicitation should stay human-gated. If a server asks for more
 information or asks a model to perform nested reasoning, the client/user should
 be able to approve, reject, or edit that request.
@@ -86,6 +91,10 @@ The skill is the preferred central entry point for future Codex agents. It
 provides install, validation, recovery, learning-log, and closeout procedures,
 while each project keeps its own `.cortex/` state locally.
 
+The skill must remain project-aware: target project files are primary, external
+projects are optional references, and uncertain or non-trivial cross-project
+reuse should be proposed before implementation.
+
 The skill also provides update awareness. Future agents can use it to check
 GitHub for newer documented framework, template, prompt, tool, and skill
 versions. Agents must summarize the documented changes and ask for approval
@@ -131,6 +140,8 @@ Prompts should:
 - update LEARNINGS when durable lessons are found
 - verify before publishing
 - keep project-local scope
+- build context from the target project before borrowing outside patterns
+- ask before non-trivial cross-project reuse
 - put any blocking user question at the very end, marked with `Waiting for your response:`
 
 Blocking Question Behavior

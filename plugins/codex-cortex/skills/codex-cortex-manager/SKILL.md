@@ -16,12 +16,25 @@ Codex Cortex provides a central operating pattern for all agents and prompts whi
 ## Core Rules
 
 - Confirm or infer the target project root before installing or editing Cortex files.
-- Keep project state scoped to the target project.
+- Keep project state scoped to the target project. The current project is always the primary context and source of truth.
 - Keep source code and Cortex state separate.
 - Do not store private chain-of-thought. Record public conclusions, evidence, failed approaches, caveats, and next steps.
 - Record durable failures, repeated setup requirements, quoting/path caveats, compatibility notes, and do-not-repeat lessons in `.cortex/LEARNINGS.md`.
 - Do not compile, upload, deploy, publish, or run risky automation unless the project rules explicitly allow it or the user says `go`.
 - If work must stop for user input, make the blocking question the final text posted and mark it with `Waiting for your response:`.
+
+## Project Awareness
+
+Always build working context from the target project's files first. Treat `START_HERE.md`, `AGENTS.md`, `.cortex/`, and the target source tree as the authority for that project.
+
+Other projects may be used as reference material when they help with the current task, but they are not source of truth for the target project. If a useful pattern from another project is clearly small, mechanical, and compatible with the current project rules, apply it without making the user approve a trivial choice. If the pattern changes behavior, architecture, dependencies, tooling, deployment, or project direction, mention the source project pattern and ask before implementing.
+
+When unsure whether cross-project reuse is appropriate, ask before implementation. Use this style:
+
+```text
+Waiting for your response:
+We used [pattern] in [other project]. Do you want me to adapt it here?
+```
 
 ## Project Recovery
 

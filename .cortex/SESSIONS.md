@@ -55,3 +55,11 @@
 - Not done: no recurring automation has been created yet because it requires user permission.
 - Status: update flow is metadata-first, then download approval, then install approval.
 - Follow-up: ask whether to create a 30-day default update-check automation.
+
+## 2026-05-01 - Project-aware plugin behavior
+
+- Changed: documented target-project-first behavior and cross-project reference rules in the manager skill, templates, prompts, docs, and MCP policy.
+- Verified: root validation has zero missing files/placeholders/invalid JSON; template and publish-base validation have zero missing files and expected placeholders; packaged and installed manager skills validate and contain the Project Awareness section.
+- Not done: no behavior-changing MCP runtime exists yet.
+- Status: other projects are references only; non-trivial adaptation requires a user decision.
+- Follow-up: push the update to GitHub.

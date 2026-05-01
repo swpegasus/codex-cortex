@@ -22,6 +22,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Required To Make Things Work
 
+- Project-aware plugin behavior should be explicit - context: cross-project skills can accidentally over-borrow from other projects; better path: always treat the target project as source of truth, use other projects only as optional references, and ask before non-trivial cross-project adaptation; found: 2026-05-01
 - Update checks should fetch documented changes before downloads - context: user wants agents to know about GitHub updates but preserve approval before download/install; better path: run check-only script, summarize changelog, ask approval, then run updater with explicit approval switches; found: 2026-05-01
 - Recurring update checks should be opt-in - context: user wants a 30-day default automation but only with permission; better path: ask before creating automation and keep automation check-only unless user approves download/install; found: 2026-05-01
 - Blocking questions should be final and visually distinct - context: user wants paused runs to be obvious in long chat or workflow output; better path: end with `Waiting for your response:` followed by one clear question or requested decision; found: 2026-05-01

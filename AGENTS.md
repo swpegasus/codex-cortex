@@ -53,6 +53,16 @@ Update Cortex files when meaningful state changes:
 10. `.cortex/GUIDE.md`
 11. `.cortex/RULES.md`
 
+## Project Awareness
+
+The current project is the primary context and source of truth.
+
+Use other projects only as optional references for reusable patterns, tools, or prior solutions. Do not let another project's assumptions, rules, or architecture override this project's files.
+
+If reuse from another project is trivial, clearly compatible, and within the current task, apply it without interrupting the user. If reuse would change architecture, dependencies, behavior, workflow, deployment, or project direction, mention the source project pattern and ask before implementing it.
+
+When unsure, ask before implementation.
+
 ## Autonomous Learning Rule
 
 Agents, reusable prompts, and normal threads should update `.cortex/LEARNINGS.md` during work when they discover durable project knowledge future runs should not have to rediscover. This does not require a separate user prompt.
