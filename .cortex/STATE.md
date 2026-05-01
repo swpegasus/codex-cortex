@@ -4,7 +4,7 @@ Last updated: 2026-05-01
 
 ## Project Phase
 
-Pre-publish setup.
+Published private repository.
 
 ## Source Material
 
@@ -19,9 +19,9 @@ Pre-publish setup.
 ## Implementation State
 
 - Exists: GitHub-ready Codex Cortex repository structure, template, docs, installer, validator, metadata, MCP tool contract draft, and global Codex skill.
-- Missing: GitHub remote, GitHub CLI authentication, and public/private GitHub publication.
-- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, global skill validates, and GitHub CLI 2.92.0 is installed.
-- Not verified: GitHub push, GitHub release flow, MCP server implementation, n8n workflow integration.
+- Missing: final license selection, public release decision, GitHub release/tag.
+- Verified: PowerShell scripts parse, metadata JSON parses, template validator reports no missing required files, global skill validates, GitHub CLI 2.92.0 is installed/authenticated, and `main` was pushed to the private GitHub repo.
+- Not verified: GitHub release flow, MCP server implementation, n8n workflow integration.
 
 ## Active Source Folders
 
@@ -34,10 +34,9 @@ Keep Codex Cortex documentation-first and auditable. Build future automation in 
 
 ## Open Questions
 
-- Which GitHub organization or account should host the repo?
-- Should the first GitHub repository be public or private?
 - Which license should be selected before public release?
+- Should the private repository be made public after license selection?
 
 ## Next Step
 
-Authenticate GitHub CLI with `gh auth login`, then add/create the remote and push `main`.
+Choose a license, then decide whether to keep the repo private or make it public.

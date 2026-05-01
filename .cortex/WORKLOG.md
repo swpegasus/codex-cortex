@@ -15,6 +15,7 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Rename `STREAM_OF_THOUGHT.md` to `WORKLOG.md` - reason: avoids chain-of-thought confusion and describes public decision/evidence logging; evidence: `template/.cortex/WORKLOG.md`; date: 2026-05-01
 - Add `LEARNINGS.md` - reason: future agents, prompts, and threads need a durable place for failures, caveats, and do-not-repeat lessons; evidence: `template/.cortex/LEARNINGS.md`; date: 2026-05-01
 - Install a global `codex-cortex` skill - reason: future Codex agents need system-level instructions for installing and maintaining Cortex state; evidence: `C:\Users\me\.codex\skills\codex-cortex`; date: 2026-05-01
+- Publish first GitHub repo as private - reason: project still has temporary no-license notice, so private is safer until license is chosen; evidence: `https://github.com/swpegasus/codex-cortex`; date: 2026-05-01
 
 ## Evidence
 
@@ -22,13 +23,13 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - JSON parse passed for `template\.cortex\meta.json` and `template\.cortex\mcp-tools.json`; date: 2026-05-01
 - Template validation found zero missing files and expected placeholder hits; date: 2026-05-01
 - Global skill validation returned `Skill is valid!`; date: 2026-05-01
+- GitHub CLI authenticated as `swpegasus` and pushed `main` to `swpegasus/codex-cortex`; date: 2026-05-01
 
 ## Open Questions
 
-- Which GitHub destination should host the project?
-- Should the repository be public immediately or start private?
 - Which license should replace `LICENSE.txt` before public release?
+- Should `swpegasus/codex-cortex` remain private or be made public after license selection?
 
 ## Next Step
 
-- Resolve GitHub access, add a remote, push `main`, and optionally create a release/tag.
+- Choose a license, decide visibility, and optionally create a release/tag.
