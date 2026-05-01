@@ -14,7 +14,8 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 ## Command / Shell / Path Caveats
 
 - Git commits require repository-local identity if global git identity is missing - requirement: set `git config user.name` and `git config user.email`; symptom if missed: commit fails with `Author identity unknown`; found: 2026-05-01
-- GitHub CLI is not available in this environment by default - requirement: install `gh` or use a configured GitHub connector installation; symptom if missed: `gh : The term 'gh' is not recognized`; found: 2026-05-01
+- GitHub CLI was installed through `winget` - requirement: refresh PATH or open a new shell after install; symptom if missed: current shell may still not find `gh`; evidence: `C:\Program Files\GitHub CLI\gh.exe`; found: 2026-05-01
+- GitHub CLI still requires authentication after install - requirement: run `gh auth login`; symptom if missed: `You are not logged into any GitHub hosts`; found: 2026-05-01
 - PowerShell paths with spaces should be quoted and usually passed with `-LiteralPath` - requirement: quote paths like `D:\Codex Projects\_codex\codex-cortex`; symptom if missed: path parsing mistakes; found: 2026-05-01
 
 ## Required To Make Things Work
@@ -24,11 +25,11 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Failed Approaches
 
-- Publishing directly through the GitHub connector failed - result: connector reported no installed repositories/accounts/installations; cause: GitHub app has no accessible installation in this session; next time: authorize/install the GitHub app or provide a GitHub remote accessible through `gh`; found: 2026-05-01
+- Publishing directly through the GitHub connector failed - result: connector reported no installed repositories/accounts/installations; cause: GitHub app has no accessible installation in this session; next time: authorize/install the GitHub app or authenticate `gh`; found: 2026-05-01
 
 ## Debugging Notes
 
-- GitHub publish readiness - likely cause: missing `gh` and empty connector installation list; useful check: run `gh --version`, `gh auth status`, and GitHub connector installation/list repository calls; found: 2026-05-01
+- GitHub publish readiness - likely cause: unauthenticated `gh` and empty connector installation list; useful check: run `gh --version`, `gh auth status`, and GitHub connector installation/list repository calls; found: 2026-05-01
 
 ## Compatibility Notes
 
@@ -36,4 +37,4 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Open Learning Questions
 
-- Which GitHub auth path is preferred for this system - why it matters: determines whether publishing should use `gh`, GitHub connector tools, or manual remote setup; next check: verify installed GitHub app access or install GitHub CLI.
+- Which GitHub auth path is preferred for this system - why it matters: determines whether publishing should use `gh`, GitHub connector tools, or manual remote setup; next check: run `gh auth login` or verify installed GitHub app access.

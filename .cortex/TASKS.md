@@ -8,9 +8,11 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 - [ ] Publish to GitHub - context: user requested GitHub publication; source: user request; added: 2026-05-01
 - [ ] Choose a real license - context: `LICENSE.txt` is currently a temporary no-license notice; source: repository review; added: 2026-05-01
+- [ ] Authenticate GitHub CLI - context: `gh` is installed but not logged into any GitHub host; source: `gh auth status`; added: 2026-05-01
+
 ## Blocked
 
-- [ ] Push repository to GitHub - blocked by: no `gh` command available and GitHub connector has no installed accounts/repositories; added: 2026-05-01
+- [ ] Push repository to GitHub - blocked by: `gh` is installed but unauthenticated, and GitHub connector has no installed accounts/repositories; added: 2026-05-01
 
 ## Later
 
@@ -24,6 +26,7 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 - [x] Install global Codex Cortex skill - completed: 2026-05-01; notes: created `C:\Users\me\.codex\skills\codex-cortex` and validated it
 - [x] Install Cortex into the Codex Cortex repo - completed: 2026-05-01; notes: added root `AGENTS.md`, `START_HERE.md`, and `.cortex/`
 - [x] Commit root Cortex install - completed: 2026-05-01; notes: root Cortex files prepared for local commit
+- [x] Install GitHub CLI system-wide - completed: 2026-05-01; notes: installed `gh` 2.92.0 with `winget`; PATH refresh or new shell may be needed
 
 ## Rule
 
