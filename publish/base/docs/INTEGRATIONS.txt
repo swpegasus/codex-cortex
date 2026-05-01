@@ -76,6 +76,25 @@ The working repository can keep project-specific `.cortex/` state. The
 `publish/base/` folder should remain project-free and suitable for copying,
 downloading, or packaging as a clean template.
 
+Codex Plugin Direction
+----------------------
+
+The published repository includes a Codex plugin at `plugins/codex-cortex/`.
+The plugin packages a cross-project skill named `codex-cortex-manager`.
+
+The skill is the preferred central entry point for future Codex agents. It
+provides install, validation, recovery, learning-log, and closeout procedures,
+while each project keeps its own `.cortex/` state locally.
+
+Before publishing a new build, refresh the packaged skill from repository source:
+
+  tools/Build-CodexCortexPlugin.ps1
+
+To make the skill available to all future local Codex agents after an approved
+update, run:
+
+  plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1 -Force
+
 Prompt Direction
 ----------------
 
@@ -89,6 +108,20 @@ Prompts should:
 - update LEARNINGS when durable lessons are found
 - verify before publishing
 - keep project-local scope
+- put any blocking user question at the very end, marked with `Waiting for your response:`
+
+Blocking Question Behavior
+--------------------------
+
+Agents, prompts, MCP clients, MCP servers, and n8n workflows should surface
+required user input as the final visible item in the response. The preferred
+format is:
+
+  Waiting for your response:
+  [single clear question or requested decision]
+
+This keeps paused runs easy to identify in long logs, chat windows, and workflow
+execution records.
 
 Research Trace
 --------------

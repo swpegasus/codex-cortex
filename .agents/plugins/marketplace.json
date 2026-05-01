@@ -1,0 +1,20 @@
+{
+  "name": "codex-cortex",
+  "interface": {
+    "displayName": "Codex Cortex"
+  },
+  "plugins": [
+    {
+      "name": "codex-cortex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codex-cortex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

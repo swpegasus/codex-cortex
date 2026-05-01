@@ -7,6 +7,11 @@ $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $outputRoot = Join-Path $repoRoot $OutputPath
+$pluginBuild = Join-Path $PSScriptRoot "Build-CodexCortexPlugin.ps1"
+
+if (Test-Path -LiteralPath $pluginBuild -PathType Leaf) {
+    & $pluginBuild
+}
 
 if ($Clean -and (Test-Path -LiteralPath $outputRoot)) {
     $resolvedOutput = (Resolve-Path -LiteralPath $outputRoot).Path
@@ -19,8 +24,10 @@ if ($Clean -and (Test-Path -LiteralPath $outputRoot)) {
 New-Item -ItemType Directory -Force -Path $outputRoot | Out-Null
 
 $copyRoots = @(
+    ".agents",
     ".github",
     "docs",
+    "plugins",
     "prompts",
     "schemas",
     "template",

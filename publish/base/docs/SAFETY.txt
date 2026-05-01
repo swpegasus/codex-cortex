@@ -40,9 +40,21 @@ tools/Install-Cortex.ps1:
 tools/Build-PublishBase.ps1:
 
 - copies selected repository folders into publish/base
+- refreshes the packaged Codex plugin skill before copying files
 - can clean only its configured output folder
 - refuses to clean paths outside the repository
 - does not compile, upload, deploy, publish, or contact the network
+
+tools/Build-CodexCortexPlugin.ps1:
+
+- refreshes the packaged `codex-cortex-manager` skill from repository source files
+- copies template, docs, prompts, and the validator into the plugin skill package
+- optionally installs the refreshed skill into the local Codex skills folder
+
+plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1:
+
+- copies the packaged `codex-cortex-manager` skill into the local Codex skills folder
+- requires -Force before replacing an existing system skill
 
 Network Behavior
 ----------------
@@ -78,11 +90,15 @@ To audit this project, read:
 2. docs/FUNCTION.txt
 3. docs/SAFETY.txt
 4. docs/STRUCTURE.txt
-5. docs/RESEARCH_NOTES.txt
-6. tools/Validate-Cortex.ps1
-7. tools/Install-Cortex.ps1
-8. tools/Build-PublishBase.ps1
-9. schemas/cortex.schema.json
-10. schemas/mcp-tools.schema.json
-11. template/.cortex/meta.json
-12. template/.cortex/mcp-tools.json
+5. docs/CODEX_PLUGIN.txt
+6. docs/RESEARCH_NOTES.txt
+7. tools/Validate-Cortex.ps1
+8. tools/Install-Cortex.ps1
+9. tools/Build-CodexCortexPlugin.ps1
+10. tools/Build-PublishBase.ps1
+11. plugins/codex-cortex/.codex-plugin/plugin.json
+12. plugins/codex-cortex/skills/codex-cortex-manager/SKILL.md
+13. schemas/cortex.schema.json
+14. schemas/mcp-tools.schema.json
+15. template/.cortex/meta.json
+16. template/.cortex/mcp-tools.json

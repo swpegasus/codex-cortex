@@ -26,6 +26,13 @@ Read these files first:
 
 <Summarize the user's current rules for planning, editing, building, testing, uploading, deploying, and publishing.>
 
+If work must stop for a user answer, make the question the final text posted and separate it with:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```
+
 ## Project-Scoped Continuity
 
 Use only this project's Cortex files unless the user explicitly redirects to another project.

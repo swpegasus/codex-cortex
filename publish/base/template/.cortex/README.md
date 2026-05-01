@@ -30,6 +30,15 @@ When files disagree:
 
 When a conflict is found, update the stale file instead of silently choosing one.
 
+## Blocking Questions
+
+If a run must stop for user input, the waiting request must be the last thing posted and should use this visually distinct format:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```
+
 ## Tooling Note
 
 Markdown files remain the human-readable source of truth. JSON files are optional discovery aids for agents, prompts, threads, MCP servers, validation scripts, or workflow tools.

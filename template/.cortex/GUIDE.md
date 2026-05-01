@@ -9,6 +9,7 @@ Use this file as the operating guide for coding threads, reusable prompts, and a
 - Treat user corrections as hard pivots.
 - Explain what is being checked or changed before substantial work.
 - Preserve approval gates.
+- If work must stop for user input, make the blocking question the final text posted and make it visually distinct.
 
 ## Autonomous Learning
 
@@ -41,3 +42,10 @@ When finishing work:
 - update `WORKLOG.md`
 - update `LEARNINGS.md` if any durable lesson was found
 - report verified and unverified items
+
+If the work is blocked on a user decision, end with:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```

@@ -12,3 +12,10 @@ Use this prompt when starting work in a project that already has Cortex installe
 8. Follow project gates.
 
 If a failed approach, shell caveat, quoting requirement, compatibility issue, or setup requirement is discovered, update `.cortex/LEARNINGS.md` during the work.
+
+If the run must stop for user input, make the question the final text posted:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```

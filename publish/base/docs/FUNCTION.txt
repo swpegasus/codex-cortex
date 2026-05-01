@@ -76,6 +76,10 @@ START_HERE.md
 prompts/
   Reusable prompts for installation, resume, closeout, and research passes.
 
+plugins/codex-cortex/
+  Codex plugin package containing the cross-project `codex-cortex-manager`
+  skill and a system-skill installer.
+
 schemas/
   JSON Schemas for Cortex metadata and MCP tool contracts.
 
@@ -94,6 +98,16 @@ When files disagree:
 5. .cortex/WORKLOG.md wins for decisions, assumptions, evidence, and questions.
 6. .cortex/LEARNINGS.md wins for failures, caveats, and do-not-repeat lessons.
 7. .cortex/SESSIONS.md wins for dated historical milestones.
+
+Blocking Questions
+------------------
+
+When an agent, prompt, thread, MCP workflow, or automation must stop for a user
+answer, the blocking question should be the last thing posted. Use a clear
+waiting block so the request is not buried:
+
+  Waiting for your response:
+  [single clear question or requested decision]
 
 Automation Path
 ---------------
@@ -120,3 +134,19 @@ Regenerate it with:
   tools/Build-PublishBase.ps1 -Clean
 
 The publish base should not include the root `.cortex/` state folder.
+
+Codex Plugin
+------------
+
+The Codex plugin is the portable way to make Cortex available to future Codex
+agents. It packages the cross-project `codex-cortex-manager` skill. The skill is
+not locked to this repository; it installs and maintains Cortex in any target
+project selected by the user.
+
+Refresh the packaged skill before publishing:
+
+  tools/Build-CodexCortexPlugin.ps1
+
+Install or refresh the system-wide skill after an approved update:
+
+  plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1 -Force

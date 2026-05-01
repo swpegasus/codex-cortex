@@ -15,3 +15,10 @@ Useful research lanes:
 - Workflow automation through n8n.
 - GitHub community health and packaging expectations.
 - Agent and prompt interoperability.
+
+If research cannot continue without a user decision, make the question the final text posted:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```

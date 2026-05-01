@@ -69,6 +69,7 @@ It is designed to preserve:
 - Record public conclusions, evidence, failed approaches, and next steps.
 - Do not compile, upload, deploy, publish, or run risky automation unless the project rules explicitly allow it or the user says `go`.
 - Agents, reusable prompts, and normal threads should update `.cortex/LEARNINGS.md` when they discover durable lessons future runs should not repeat.
+- If work must stop for user input, make the waiting question the final text posted and mark it clearly with `Waiting for your response:`.
 
 ## Quick Start
 
@@ -107,6 +108,28 @@ The installer copies the template into a project:
 
 Use `-Force` only when you intentionally want to overwrite existing Cortex files.
 
+## Codex Plugin And System Skill
+
+Codex Cortex also ships a Codex plugin under `plugins/codex-cortex/`. The plugin contains a cross-project skill named `codex-cortex-manager`.
+
+That skill is meant to be installed once into the Codex skills folder so future agents can install, validate, and maintain Cortex state across any project. It provides the shared procedure; each project still keeps its own local `.cortex/` files.
+
+Install or refresh the system skill from this repository with:
+
+```powershell
+.\plugins\codex-cortex\scripts\Install-CodexCortexManagerSkill.ps1 -Force
+```
+
+Before publishing or release work, refresh the packaged plugin skill from repository source:
+
+```powershell
+.\tools\Build-CodexCortexPlugin.ps1
+```
+
+`Build-PublishBase.ps1` runs that plugin refresh automatically before generating `publish/base/`.
+
+For a plain text audit of the plugin package, read `docs/CODEX_PLUGIN.txt`.
+
 ## Prompts And Schemas
 
 `prompts/` contains reusable prompts for installing Cortex, resuming a Cortex project, closing out a work session, and researching improvements.
@@ -144,6 +167,7 @@ For a plain text audit, read:
 - `docs/SAFETY.txt`
 - `docs/STRUCTURE.txt`
 - `docs/INTEGRATIONS.txt`
+- `docs/CODEX_PLUGIN.txt`
 - `docs/RESEARCH_NOTES.txt`
 - `tools/Validate-Cortex.ps1`
 - `tools/Install-Cortex.ps1`

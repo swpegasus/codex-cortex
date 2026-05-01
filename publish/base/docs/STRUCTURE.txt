@@ -55,6 +55,16 @@ START_HERE.md
 prompts/
   Reusable prompt pack for installation, resume, closeout, and research work.
 
+plugins/codex-cortex/
+  Codex plugin package with the cross-project `codex-cortex-manager` skill.
+
+plugins/codex-cortex/skills/codex-cortex-manager/
+  System-installable Codex skill for installing and maintaining Cortex across
+  any project.
+
+plugins/codex-cortex/scripts/
+  Plugin-level helper scripts, including system skill installation.
+
 schemas/
   Machine-readable JSON Schemas for metadata and MCP tool contracts.
 

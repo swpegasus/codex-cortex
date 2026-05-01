@@ -10,6 +10,7 @@ Immediate
 - Preserve explicit approval gates.
 - Capture failed approaches and caveats in LEARNINGS.md.
 - Keep publish/base separate from root project state.
+- Keep the Codex plugin skill package refreshed from repository source.
 - Keep prompts and schemas versioned.
 
 Next

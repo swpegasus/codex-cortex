@@ -24,3 +24,9 @@ Use these as portable project/user instructions.
 ## Learning Capture
 
 - Agents, reusable prompts, and normal threads should record reusable failures, caveats, quoting requirements, compatibility findings, and do-not-repeat lessons in `LEARNINGS.md` during work.
+
+## Blocking Questions
+
+- If work must stop for user input, put the blocking question at the very end of the response.
+- Make the waiting state visually distinct with `Waiting for your response:`.
+- Ask one clear question or request one clear decision whenever possible.

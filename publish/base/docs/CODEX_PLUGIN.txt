@@ -1,0 +1,91 @@
+Codex Cortex Plugin And Skill
+=============================
+
+Purpose
+-------
+
+The Codex Cortex plugin packages a cross-project Codex skill named
+`codex-cortex-manager`.
+
+The skill is the central access point for Codex agents. It explains how to
+install, validate, and maintain Cortex files in any project, while each project
+keeps its own local `.cortex/` state.
+
+This means the plugin provides shared behavior, but not shared project state.
+Project facts stay in the project being worked on.
+
+Included Files
+--------------
+
+plugins/codex-cortex/.codex-plugin/plugin.json
+  Plugin manifest.
+
+plugins/codex-cortex/skills/codex-cortex-manager/
+  Cross-project Codex skill.
+
+plugins/codex-cortex/skills/codex-cortex-manager/assets/template/
+  The blank Cortex template copied into target projects.
+
+plugins/codex-cortex/skills/codex-cortex-manager/scripts/
+  Skill-local install and validation scripts.
+
+plugins/codex-cortex/skills/codex-cortex-manager/references/
+  Documentation and prompt references for future agents.
+
+plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1
+  Installs the cross-project skill into the local Codex skills folder.
+
+Build Refresh
+-------------
+
+The packaged skill should be refreshed from repository source before publishing
+or release work:
+
+  tools/Build-CodexCortexPlugin.ps1
+
+That script updates the skill package from:
+
+- template/
+- docs/
+- prompts/
+- tools/Validate-Cortex.ps1
+
+The publish-base builder calls this plugin build script automatically:
+
+  tools/Build-PublishBase.ps1 -Clean
+
+System Skill Install
+--------------------
+
+To make the skill available to future Codex agents on the current machine, run:
+
+  plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1 -Force
+
+By default, the installer targets:
+
+  $env:CODEX_HOME/skills
+
+If CODEX_HOME is not set, it targets:
+
+  $HOME/.codex/skills
+
+After install, future agents can use `codex-cortex-manager` to work across
+projects.
+
+Target Project Install
+----------------------
+
+Once the system skill is installed, use the skill from any project and run its
+bundled installer against that project root:
+
+  scripts/Install-CortexProject.ps1 -ProjectRoot "<PROJECT_ROOT>"
+
+The installer copies the blank Cortex template into the target project. It does
+not compile, upload, deploy, publish, contact outside services, or modify source
+code.
+
+Approval Gate
+-------------
+
+Future builds should refresh the plugin skill package and reinstall the system
+skill only after the user approves the build/update step.

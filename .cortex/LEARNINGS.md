@@ -8,6 +8,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Do Not Repeat
 
+- Do not package a distributable skill by copying the current installed skill - reason: an installed skill may contain project-local assumptions or stale resources; better path: build the packaged skill from repository source files with `tools/Build-CodexCortexPlugin.ps1`; found: 2026-05-01
 - Do not assume GitHub plugin access means repository publishing is available - reason: the connector can be authenticated but still have no installed accounts or repositories; better path: check installed accounts/installations before promising publish; found: 2026-05-01
 - Do not treat the template validator's placeholder findings as a failure when validating the reusable template itself - reason: placeholders are expected before installation into a real project; better path: check `missingFiles` first and interpret placeholder hits by context; found: 2026-05-01
 
@@ -20,6 +21,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 
 ## Required To Make Things Work
 
+- Blocking questions should be final and visually distinct - context: user wants paused runs to be obvious in long chat or workflow output; better path: end with `Waiting for your response:` followed by one clear question or requested decision; found: 2026-05-01
 - System-wide Codex Cortex use requires a skill under `C:\Users\me\.codex\skills\codex-cortex` - context: future agents can discover the skill from the Codex skills folder; evidence: skill validation passed; found: 2026-05-01
 - Project-local Cortex use requires root `AGENTS.md`, `START_HERE.md`, and `.cortex/` - context: future runs need deterministic recovery order; evidence: installed into the Codex Cortex repo; found: 2026-05-01
 - GitHub publishing works after `gh auth login` - context: `gh repo create swpegasus/codex-cortex --private --source . --remote origin --push` created the repo and pushed `main`; evidence: `https://github.com/swpegasus/codex-cortex`; found: 2026-05-01
@@ -28,6 +30,7 @@ Do not store private chain-of-thought. Record the useful conclusion, evidence, a
 - Keep root `.cortex/` separate from publishable base - context: root `.cortex/` contains this repository's maintenance state and should not be distributed as a blank template; better path: generate `publish/base/` from source template/docs/tools; found: 2026-05-01
 - n8n MCP exposure must be explicit - context: workflows are not automatically visible to MCP clients and descriptions help agents identify inputs; better path: document per-workflow enablement and descriptions in integration guidance; source: n8n docs; found: 2026-05-01
 - Future MCP server should expose resources as well as tools - context: MCP tool results can link or embed resources, which is better than returning all Cortex files as one large text block; source: MCP docs; found: 2026-05-01
+- System-wide cross-project Cortex use should prefer `codex-cortex-manager` - context: the earlier `codex-cortex` skill was created during repository setup and can be too repository-specific; better path: install the plugin-packaged manager skill from `plugins/codex-cortex/scripts/Install-CodexCortexManagerSkill.ps1`; found: 2026-05-01
 
 ## Failed Approaches
 

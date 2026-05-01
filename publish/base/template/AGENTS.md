@@ -65,6 +65,19 @@ Record concise public learnings such as:
 
 Do not store private chain-of-thought. Record the useful conclusion, evidence, and better next action.
 
+## Blocking Question Rule
+
+When an agent, prompt, or thread must stop for a user answer, the blocking question must be the last thing posted. Keep it visually distinct so it is obvious the run is waiting for user input.
+
+Preferred format:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```
+
+Do not bury the question in a paragraph, checklist, or earlier section.
+
 ## Documentation Rule
 
 Create separate technical documentation only when asked, when creating checkpoints, or when documentation is explicitly part of the task. Documentation should help someone take over the project without prior chat history.

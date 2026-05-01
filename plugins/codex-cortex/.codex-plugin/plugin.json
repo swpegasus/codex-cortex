@@ -1,0 +1,38 @@
+{
+  "name": "codex-cortex",
+  "version": "0.1.0-alpha",
+  "description": "Codex Cortex plugin with a cross-project skill for installing and maintaining project-local continuity state.",
+  "author": {
+    "name": "swpegasus",
+    "url": "https://github.com/swpegasus"
+  },
+  "homepage": "https://github.com/swpegasus/codex-cortex",
+  "repository": "https://github.com/swpegasus/codex-cortex",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "continuity",
+    "agents",
+    "mcp",
+    "project-memory"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Cortex",
+    "shortDescription": "Install and maintain Cortex continuity across projects.",
+    "longDescription": "Codex Cortex gives Codex agents and prompts a central, reusable procedure for installing and maintaining project-local continuity files. It keeps each project's state in that project while the plugin skill provides cross-project install, validation, learning-log, and recovery workflows.",
+    "developerName": "swpegasus",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/swpegasus/codex-cortex",
+    "defaultPrompt": [
+      "Install Codex Cortex in this project.",
+      "Validate this project's Cortex files.",
+      "Update Cortex state before closeout."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

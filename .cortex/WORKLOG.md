@@ -20,6 +20,9 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Add publish/base - reason: public GitHub repo needs a blank, project-free base separate from root `.cortex` maintenance state; evidence: `publish/base/manifest.json`; date: 2026-05-01
 - Add schemas, prompts, and GitHub templates - reason: agents and workflow systems need stable contracts, reusable prompt patterns, and contribution paths; evidence: `schemas/`, `prompts/`, `.github/`; date: 2026-05-01
 - Name first release `alpha` - reason: user requested alpha labeling for the current public base; evidence: GitHub tag/release `alpha`; date: 2026-05-01
+- Require final-position blocking questions - reason: user wants paused runs to be obvious and not buried in long output; evidence: `AGENTS.md`, `template/AGENTS.md`, `prompts/`, and `docs/INTEGRATIONS.txt`; date: 2026-05-01
+- Add cross-project Codex plugin skill - reason: the distributable skill must work across all projects rather than being locked to this repository; evidence: `plugins/codex-cortex/skills/codex-cortex-manager/SKILL.md`; date: 2026-05-01
+- Refresh plugin skill during builds - reason: packaged skill assets should track the current repository template, docs, prompts, and validator; evidence: `tools/Build-CodexCortexPlugin.ps1` and `tools/Build-PublishBase.ps1`; date: 2026-05-01
 
 ## Evidence
 
@@ -33,6 +36,11 @@ This is public project state. It records decisions, assumptions, evidence, open 
 - Template and publish-base template validation found zero missing files, expected placeholders, zero invalid JSON files, and zero recovery-order missing files; date: 2026-05-01
 - Global `codex-cortex` skill was synced with new scripts/references/prompts and validated; date: 2026-05-01
 - GitHub release/tag `alpha` created from the current main branch; date: 2026-05-01
+- Blocking-question format added to agent rules, prompt pack, human docs, and Cortex state files; date: 2026-05-01
+- `codex-cortex-manager` skill validates in both the plugin package and `C:\Users\me\.codex\skills`; date: 2026-05-01
+- PowerShell parse passed for the plugin build script, plugin skill installer, and project installer; date: 2026-05-01
+- Temporary install smoke test from packaged `codex-cortex-manager` skill had zero missing files, zero invalid JSON files, and zero recovery-order missing files; date: 2026-05-01
+- Legacy installed `codex-cortex` skill was converted into a compatibility alias pointing to `codex-cortex-manager`; date: 2026-05-01
 
 ## Open Questions
 

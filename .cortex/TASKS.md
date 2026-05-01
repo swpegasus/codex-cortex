@@ -18,6 +18,10 @@ Use this list for deferred work, reminders, cleanup, validation, and future appr
 
 ## Done
 
+- [x] Add cross-project Codex plugin skill - completed: 2026-05-01; notes: created `plugins/codex-cortex` with `codex-cortex-manager` skill, plugin manifest, marketplace entry, and system skill installer
+- [x] Add plugin build refresh - completed: 2026-05-01; notes: `Build-CodexCortexPlugin.ps1` refreshes the packaged skill from repository source and `Build-PublishBase.ps1` calls it
+- [x] Install cross-project system skill - completed: 2026-05-01; notes: installed `C:\Users\me\.codex\skills\codex-cortex-manager` and validated it
+- [x] Add blocking-question guidance - completed: 2026-05-01; notes: agents, prompts, and integration docs now require waiting questions to be the final distinct response block
 - [x] Create GitHub-ready Codex Cortex repo structure - completed: 2026-05-01; notes: added README, docs, template, tools, metadata, and safety files
 - [x] Install global Codex Cortex skill - completed: 2026-05-01; notes: created `C:\Users\me\.codex\skills\codex-cortex` and validated it
 - [x] Install Cortex into the Codex Cortex repo - completed: 2026-05-01; notes: added root `AGENTS.md`, `START_HERE.md`, and `.cortex/`

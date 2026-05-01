@@ -12,3 +12,10 @@ Update:
 - `.cortex/RECOVERY.md`, if safe resume steps changed
 
 Final response should say what changed, what was verified, what was not verified, and what remains blocked.
+
+If closeout cannot proceed without a user answer, put the waiting request at the very end:
+
+```text
+Waiting for your response:
+[single clear question or requested decision]
+```

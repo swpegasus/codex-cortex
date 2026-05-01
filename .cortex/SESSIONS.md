@@ -31,3 +31,19 @@
 - Not done: MCP server runtime and n8n examples.
 - Status: GitHub release/tag is named `alpha`.
 - Follow-up: continue with MCP server planning or n8n workflow examples.
+
+## 2026-05-01 - Blocking question guidance
+
+- Changed: added a rule that any question blocking progress must be the final visible response block.
+- Verified: pending full validation after publish-base regeneration.
+- Not done: no release tag movement planned for this documentation-only follow-up.
+- Status: rule is being propagated through repo docs, templates, prompts, publish base, and installed skill.
+- Follow-up: validate and push the update to GitHub.
+
+## 2026-05-01 - Codex plugin and manager skill
+
+- Changed: added `plugins/codex-cortex/` with a cross-project `codex-cortex-manager` skill, plugin manifest, marketplace entry, plugin build script, and system skill installer.
+- Verified: packaged skill validates, installed system skill validates, legacy alias skill validates, plugin-related PowerShell scripts parse, plugin JSON parses, and a temporary project smoke install has zero missing files.
+- Not done: no MCP server runtime yet.
+- Status: plugin package is refreshed from repository source during builds.
+- Follow-up: regenerate publish base, run full validation, commit, and push.

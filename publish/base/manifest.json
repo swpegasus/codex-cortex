@@ -1,11 +1,13 @@
 ﻿{
     "name":  "Codex Cortex Base",
-    "generatedAt":  "2026-04-30T23:17:57",
+    "generatedAt":  "2026-04-30T23:59:18",
     "sourceRoot":  "D:\\Codex Projects\\_codex\\codex-cortex",
     "outputRoot":  "D:\\Codex Projects\\_codex\\codex-cortex\\publish\\base",
     "includes":  [
+                     ".agents",
                      ".github",
                      "docs",
+                     "plugins",
                      "prompts",
                      "schemas",
                      "template",
