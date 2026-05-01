@@ -1,0 +1,63 @@
+Codex Cortex Structure
+======================
+
+Naming Goals
+------------
+
+The project uses short names for installed files because future prompts,
+agents, scripts, and humans need to reference them repeatedly.
+
+The installed folder is `.cortex` because it is the project-local memory,
+coordination, and recovery layer.
+
+Installed Files
+---------------
+
+AGENTS.md
+  Agent, prompt, and thread instructions.
+
+START_HERE.md
+  First-read file for future runs.
+
+.cortex/README.md
+  Index for the Cortex state folder.
+
+.cortex/STATE.md
+  Current state and next action.
+
+.cortex/RECOVERY.md
+  Safe resume process.
+
+.cortex/WORKLOG.md
+  Public decisions, evidence, and open questions.
+
+.cortex/LEARNINGS.md
+  Failed approaches, caveats, compatibility notes, and do-not-repeat lessons.
+
+.cortex/SESSIONS.md
+  Dated session history.
+
+.cortex/TASKS.md
+  Task backlog and completed work.
+
+.cortex/GUIDE.md
+  Operating guide.
+
+.cortex/RULES.md
+  Portable user and project rules.
+
+.cortex/meta.json
+  Machine-readable project index.
+
+.cortex/mcp-tools.json
+  Draft MCP tool contract.
+
+Why These Names
+---------------
+
+The older prototype used longer names like CURRENT_STATE, RECOVERY_PLAYBOOK,
+SESSION_LOG, and STREAM_OF_THOUGHT. Codex Cortex shortens those to STATE,
+RECOVERY, SESSIONS, and WORKLOG.
+
+The new names are easier to reference, less tied to one specific agent, and
+more accurate for a reusable project-local continuity system.

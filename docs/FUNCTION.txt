@@ -1,0 +1,99 @@
+Codex Cortex Functional Documentation
+=====================================
+
+Purpose
+-------
+
+Codex Cortex is a project-local continuity layer for AI-assisted software work.
+It keeps durable project state in visible files so future agents, reusable
+prompts, normal threads, workflow tools, MCP servers, and human maintainers can
+resume without relying on prior chat history.
+
+What It Does
+------------
+
+Codex Cortex provides templates for:
+
+- project operating rules
+- startup instructions
+- current state
+- safe recovery
+- public work log
+- public learning log
+- session history
+- task tracking
+- coding guide
+- portable rules
+- machine-readable metadata
+- draft MCP tool contracts
+
+What It Does Not Do
+-------------------
+
+Codex Cortex does not compile, upload, deploy, publish, install dependencies,
+contact outside services, collect credentials, or modify source code by itself.
+
+Installed Structure
+-------------------
+
+AGENTS.md
+  Project rules, safety gates, recovery order, and autonomous learning rule.
+
+START_HERE.md
+  First file future runs should read.
+
+.cortex/STATE.md
+  Current project state, verified status, open questions, and next step.
+
+.cortex/RECOVERY.md
+  Safe resume steps and project approval gates.
+
+.cortex/WORKLOG.md
+  Public decisions, assumptions, evidence, open questions, and next steps.
+
+.cortex/LEARNINGS.md
+  Failed approaches, command caveats, quoting/path requirements,
+  compatibility notes, setup requirements, and do-not-repeat lessons.
+
+.cortex/SESSIONS.md
+  Dated session history.
+
+.cortex/TASKS.md
+  Active, blocked, later, and completed work.
+
+.cortex/GUIDE.md
+  Operating guide for coding threads, prompts, and agents.
+
+.cortex/RULES.md
+  Portable project and user instructions.
+
+.cortex/meta.json
+  Optional machine-readable index for tools.
+
+.cortex/mcp-tools.json
+  Draft MCP tool contract.
+
+Source Of Truth
+---------------
+
+When files disagree:
+
+1. AGENTS.md wins for operating rules and safety gates.
+2. START_HERE.md wins for immediate startup instructions.
+3. .cortex/STATE.md wins for current project state.
+4. .cortex/TASKS.md wins for task status.
+5. .cortex/WORKLOG.md wins for decisions, assumptions, evidence, and questions.
+6. .cortex/LEARNINGS.md wins for failures, caveats, and do-not-repeat lessons.
+7. .cortex/SESSIONS.md wins for dated historical milestones.
+
+Automation Path
+---------------
+
+The safest automation path is:
+
+1. read-only validation
+2. read-only project brief generation
+3. narrow append tools for work log and learnings
+4. narrow task update tools
+5. proposal-only closeout generation
+6. approval-gated build, upload, deploy, or publish actions

@@ -1,0 +1,5 @@
+No license has been selected yet.
+
+Before publishing this repository publicly, choose and add the intended license.
+
+Until a license is selected, do not assume permission to copy, modify, redistribute, or use this project outside the owner's intended scope.

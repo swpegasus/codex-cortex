@@ -1,0 +1,44 @@
+Codex Cortex Roadmap
+====================
+
+Immediate
+---------
+
+- Keep the template small and readable.
+- Keep names short and clear.
+- Validate required files and placeholders.
+- Preserve explicit approval gates.
+- Capture failed approaches and caveats in LEARNINGS.md.
+
+Next
+----
+
+- Add stronger recovery-order validation.
+- Add a filled-in example project.
+- Add migration notes for existing projects.
+- Add optional project lanes for firmware, backend, frontend, hardware, and deployment.
+
+Later
+-----
+
+- Build an MCP server around narrow read/write operations.
+- Build n8n workflows that call the MCP tools and enforce approvals.
+- Add task extraction and archive indexing.
+- Add closeout proposal generation.
+
+MCP Tool Direction
+------------------
+
+Start with read-only tools:
+
+- discover_project
+- validate_project
+- read_project_brief
+
+Then add narrow writes:
+
+- append_worklog
+- append_learning
+- update_task
+
+Keep risky actions outside Cortex or behind explicit approval gates.

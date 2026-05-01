@@ -1,0 +1,77 @@
+Codex Cortex Safety And Audit Notes
+===================================
+
+Plain-English Intent
+--------------------
+
+Codex Cortex is a continuity and handoff template. It is meant to preserve
+project-local state in readable files. It is not a deployment tool, background
+service, credential collector, remote-control tool, or code executor.
+
+File Types
+----------
+
+The project contains:
+
+- Markdown templates
+- plain text documentation
+- JSON metadata templates
+- PowerShell helper scripts
+- .gitkeep placeholders
+
+Script Behavior
+---------------
+
+tools/Validate-Cortex.ps1:
+
+- accepts a project root
+- checks for expected Cortex files
+- scans Cortex files for unresolved placeholders
+- checks whether selected safety-gate words appear in AGENTS.md
+- writes a JSON report to standard output
+- does not write files
+
+tools/Install-Cortex.ps1:
+
+- copies the template into a chosen project root
+- does not compile, upload, deploy, publish, or contact the network
+- requires -Force before overwriting existing files
+
+Network Behavior
+----------------
+
+No included file is intended to contact the network.
+
+Credential Behavior
+-------------------
+
+No included file is intended to request, collect, store, transmit, or derive
+credentials, tokens, passwords, keys, or secrets.
+
+Approval Gates
+--------------
+
+Codex Cortex repeatedly records that compile, upload, flash, deploy, publish,
+and risky automation actions require explicit approval unless a project's rules
+say otherwise.
+
+Chain-Of-Thought Boundary
+-------------------------
+
+WORKLOG.md and LEARNINGS.md are public project files. They are for conclusions,
+evidence, caveats, failed approaches, and next steps. They are not for private
+chain-of-thought.
+
+Review Checklist
+----------------
+
+To audit this project, read:
+
+1. README.md
+2. docs/FUNCTION.txt
+3. docs/SAFETY.txt
+4. docs/STRUCTURE.txt
+5. tools/Validate-Cortex.ps1
+6. tools/Install-Cortex.ps1
+7. template/.cortex/meta.json
+8. template/.cortex/mcp-tools.json

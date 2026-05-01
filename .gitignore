@@ -1,0 +1,14 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Local run outputs
+*.log
+out/
+dist/
+build/
+
+# Keep template archive placeholder
+!template/.cortex/archive/.gitkeep

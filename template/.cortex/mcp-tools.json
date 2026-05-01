@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "0.2",
+  "serverName": "codex-cortex",
+  "tools": [
+    {
+      "name": "discover_project",
+      "risk": "read-only",
+      "purpose": "Locate Cortex state and return file roles, metadata status, and recovery order."
+    },
+    {
+      "name": "validate_project",
+      "risk": "read-only",
+      "purpose": "Check required files, placeholders, stale paths, safety gates, and recovery-order consistency."
+    },
+    {
+      "name": "read_project_brief",
+      "risk": "read-only",
+      "purpose": "Return current state, open tasks, blocked tasks, open questions, next step, safety gates, and recent learnings."
+    },
+    {
+      "name": "append_worklog",
+      "risk": "narrow-write",
+      "purpose": "Append public decisions, assumptions, evidence, open questions, and next steps."
+    },
+    {
+      "name": "append_learning",
+      "risk": "narrow-write",
+      "purpose": "Append failed approaches, caveats, compatibility notes, or do-not-repeat lessons."
+    },
+    {
+      "name": "update_task",
+      "risk": "narrow-write",
+      "purpose": "Add, move, block, or complete a task."
+    },
+    {
+      "name": "prepare_closeout",
+      "risk": "proposal-only",
+      "purpose": "Generate proposed updates for state, sessions, tasks, worklog, learnings, and final response."
+    }
+  ],
+  "defaultPolicy": {
+    "readOutsideProject": false,
+    "writeSourceCode": false,
+    "compileUploadDeployPublish": "requires explicit approval",
+    "privateChainOfThoughtInFiles": false,
+    "writeMode": "append or narrow patch"
+  }
+}
